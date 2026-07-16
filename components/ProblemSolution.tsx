@@ -22,8 +22,8 @@ export default function ProblemSolution() {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-16 border-l-2 border-accent pl-6 py-1 text-left">
-          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+        <div className="max-w-2xl mx-auto mb-16 border-l-2 border-primary-200 dark:border-primary-500 pl-6 py-1 text-left">
+          <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
             Desde 2023, el Ministerio de Hacienda exige la facturación
             electrónica (DTE) de forma progresiva en El Salvador.{' '}
             <span className="font-semibold text-primary dark:text-white">
