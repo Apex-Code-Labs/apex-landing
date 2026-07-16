@@ -1,7 +1,7 @@
 import { CheckCircle2 } from 'lucide-react'
 import ThemeImage from './ThemeImage'
-import comandasLight from '@/public/screenshots/comandas_light.png'
-import comandasDark from '@/public/screenshots/comandas_dark.png'
+import comandasLight from '@/public/screenshots/comandas_light.webp'
+import comandasDark from '@/public/screenshots/comandas_dark.webp'
 
 const STEPS = [
   { n: '1', title: 'El mesero toma la orden', text: 'Desde tablet o teléfono, con login por PIN. Selecciona mesa y agrega ítems.' },

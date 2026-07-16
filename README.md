@@ -46,7 +46,7 @@ lib/
   email.ts · schema.ts     # envío de email · schemas JSON-LD
 public/
   brand/                   # isotipo SVG + lockups PNG
-  screenshots/             # pos_{light,dark}.png · comandas_{light,dark}.png
+  screenshots/             # pos_{light,dark}.webp · comandas_{light,dark}.webp (2048px, cwebp -q 82)
   ERP-Brochure-Comercial-v4.pdf   # linkeado desde Precios y Footer
 docs/
   DEPLOY-CLOUDFLARE.md     # guía de deploy completa
@@ -73,6 +73,9 @@ docs/
   IVA incluido — nunca calcular).
 - **Screenshots**: reemplazar los archivos en `public/screenshots/` con el
   mismo nombre; las dimensiones se infieren en build (static import).
+  IMPORTANTE: preprocesar SIEMPRE antes de commitear — el worker sirve el
+  archivo tal cual (sin binding IMAGES no hay resize):
+  `cwebp -q 82 -resize 2048 0 captura.png -o pos_light.webp`
 - **CTA "Prueba gratis"**: apunta a `NEXT_PUBLIC_SIGNUP_URL` si existe;
   sin definir, cae al formulario de contacto.
 

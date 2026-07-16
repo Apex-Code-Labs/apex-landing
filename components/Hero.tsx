@@ -1,6 +1,6 @@
 import ThemeImage from './ThemeImage'
-import posLight from '@/public/screenshots/pos_light.png'
-import posDark from '@/public/screenshots/pos_dark.png'
+import posLight from '@/public/screenshots/pos_light.webp'
+import posDark from '@/public/screenshots/pos_dark.webp'
 import { getSignupHref } from '@/lib/cta'
 import { waLink } from '@/lib/contact'
 import { FileCheck2, Smartphone, BadgeDollarSign, MessageCircle } from 'lucide-react'
