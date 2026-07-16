@@ -21,7 +21,7 @@ export default function Hero() {
 
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
             Sistema ERP con{' '}
-            <span className="text-transparent bg-clip-text brand-gradient">Facturación Electrónica</span>{' '}
+            <span className="text-gradient-brand">Facturación Electrónica</span>{' '}
             y POS
           </h1>
 
