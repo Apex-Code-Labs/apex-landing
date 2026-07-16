@@ -1,4 +1,4 @@
-import { Store, UtensilsCrossed, Building2, Calculator, AlertTriangle } from 'lucide-react'
+import { Store, UtensilsCrossed, Building2, Calculator } from 'lucide-react'
 
 const AUDIENCES = [
   { icon: Store, title: 'PYMES', text: 'Que quieren dejar atrás el papel y cumplir con Hacienda sin gastar de más.' },
@@ -22,12 +22,13 @@ export default function ProblemSolution() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-16 p-6 rounded-2xl bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-500 flex gap-4">
-          <AlertTriangle className="w-6 h-6 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
-          <p className="text-amber-900 dark:text-amber-100">
-            <strong>Dato importante:</strong> desde 2023, el Ministerio de Hacienda
-            exige la facturación electrónica (DTE) de forma progresiva en El Salvador.
-            Con Apex ERP, cumplir no tiene que ser complicado ni caro.
+        <div className="max-w-2xl mx-auto mb-16 border-l-2 border-accent pl-6 py-1 text-left">
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            Desde 2023, el Ministerio de Hacienda exige la facturación
+            electrónica (DTE) de forma progresiva en El Salvador.{' '}
+            <span className="font-semibold text-primary dark:text-white">
+              Con Apex ERP, cumplir no tiene que ser complicado ni caro.
+            </span>
           </p>
         </div>
 
