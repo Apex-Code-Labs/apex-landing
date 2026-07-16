@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import posScreenshot from '@/public/screenshots/pos.png'
 import { getSignupHref } from '@/lib/cta'
 import { waLink } from '@/lib/contact'
 import { FileCheck2, Smartphone, BadgeDollarSign, MessageCircle } from 'lucide-react'
@@ -49,11 +50,10 @@ export default function Hero() {
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl shadow-primary-100 dark:shadow-none overflow-hidden">
             <Image
-              src="/screenshots/pos.png"
+              src={posScreenshot}
               alt="Punto de venta de Apex ERP con catálogo de productos y cobro con DTE"
-              width={2400}
-              height={1500}
               priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
               className="w-full h-auto"
             />
           </div>
