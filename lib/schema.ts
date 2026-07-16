@@ -1,11 +1,13 @@
+import { FAQS } from './faqs'
+
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Apex Code Labs",
     "url": "https://apexcodelabs.com",
-    "logo": "https://apexcodelabs.com/logo.svg",
-    "description": "Automatizamos tus procesos y escalamos tu operación con soluciones a medida: desde marketing con CRM hasta ERPs y facturación electrónica en El Salvador, potenciadas por IA.",
+    "logo": "https://apexcodelabs.com/brand/isotipo.svg",
+    "description": "Apex Code Labs desarrolla Apex ERP, el sistema de gestión con punto de venta, inventario, comandas y facturación electrónica DTE integrada con el Ministerio de Hacienda de El Salvador.",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "SV"
@@ -23,36 +25,50 @@ export function generateOrganizationSchema() {
   }
 }
 
-export function generateServiceSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Automatización con IA y Desarrollo de Software",
-    "provider": {
-      "@type": "Organization",
-      "name": "Apex Code Labs"
-    },
-    "description": "Servicios de automatización con IA, implementación de CRM, ERP y facturación electrónica",
-    "serviceType": "Software Development",
-    "areaServed": {
-      "@type": "Country",
-      "name": "El Salvador"
-    }
-  }
-}
-
 export function generateWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Apex Code Labs",
     "url": "https://apexcodelabs.com",
-    "description": "Impulsa tu empresa con IA, CRM, ERP y Facturación Electrónica",
+    "description": "Apex ERP: ventas, POS, inventario, comandas y facturación electrónica DTE en una sola plataforma para negocios en El Salvador.",
     "inLanguage": "es-SV",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://apexcodelabs.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
+  }
+}
+
+export function generateSoftwareApplicationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Apex ERP',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web, Android, iOS (PWA)',
+    description:
+      'Sistema ERP con punto de venta, inventario, comandas y facturación electrónica DTE integrada con el Ministerio de Hacienda de El Salvador.',
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      lowPrice: '5.63',
+      highPrice: '56.48',
+      offerCount: 10,
+    },
+    provider: { '@type': 'Organization', name: 'Apex Code Labs', url: 'https://apexcodelabs.com' },
+  }
+}
+
+export function generateFAQSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
   }
 }

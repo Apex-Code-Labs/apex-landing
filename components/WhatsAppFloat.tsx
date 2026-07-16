@@ -6,8 +6,10 @@ export default function WhatsAppFloat() {
   const [isVisible, setIsVisible] = useState(true)
 
   const openWhatsApp = () => {
-    const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '503XXXXXXXX'
-    const waMessage = encodeURIComponent(process.env.NEXT_PUBLIC_WA_MSG || 'Hola Apex Code Labs, quiero información.')
+    const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '50379312064'
+    const waMessage = encodeURIComponent(
+      process.env.NEXT_PUBLIC_WA_MSG || 'Hola Apex Code Labs, quiero información sobre Apex ERP.'
+    )
     window.open(`https://wa.me/${waNumber}?text=${waMessage}`, '_blank')
   }
 
