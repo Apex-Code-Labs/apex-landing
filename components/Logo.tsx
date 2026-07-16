@@ -9,6 +9,7 @@ export default function Logo({ variant = 'light' }: { variant?: 'light' | 'dark'
         width={40}
         height={40}
         className="h-9 w-9 md:h-10 md:w-10"
+        unoptimized
       />
       <span
         className={`text-lg md:text-xl font-bold leading-none tracking-tight ${
