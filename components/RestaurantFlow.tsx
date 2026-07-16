@@ -1,6 +1,7 @@
-import Image from 'next/image'
 import { CheckCircle2 } from 'lucide-react'
-import comandasScreenshot from '@/public/screenshots/comandas.jpeg'
+import ThemeImage from './ThemeImage'
+import comandasLight from '@/public/screenshots/comandas_light.png'
+import comandasDark from '@/public/screenshots/comandas_dark.png'
 
 const STEPS = [
   { n: '1', title: 'El mesero toma la orden', text: 'Desde tablet o teléfono, con login por PIN. Selecciona mesa y agrega ítems.' },
@@ -47,8 +48,9 @@ export default function RestaurantFlow() {
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden order-2 lg:order-1">
-            <Image
-              src={comandasScreenshot}
+            <ThemeImage
+              srcLight={comandasLight}
+              srcDark={comandasDark}
               alt="Vista de comandas de Apex ERP con mesas y estados de cocina en tiempo real"
               sizes="(max-width: 1024px) 100vw, 640px"
               className="w-full h-auto"

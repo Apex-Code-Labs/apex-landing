@@ -1,5 +1,6 @@
-import Image from 'next/image'
-import posScreenshot from '@/public/screenshots/pos.png'
+import ThemeImage from './ThemeImage'
+import posLight from '@/public/screenshots/pos_light.png'
+import posDark from '@/public/screenshots/pos_dark.png'
 import { getSignupHref } from '@/lib/cta'
 import { waLink } from '@/lib/contact'
 import { FileCheck2, Smartphone, BadgeDollarSign, MessageCircle } from 'lucide-react'
@@ -49,8 +50,9 @@ export default function Hero() {
 
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl shadow-primary-100 dark:shadow-none overflow-hidden">
-            <Image
-              src={posScreenshot}
+            <ThemeImage
+              srcLight={posLight}
+              srcDark={posDark}
               alt="Punto de venta de Apex ERP con catálogo de productos y cobro con DTE"
               priority
               sizes="(max-width: 1024px) 100vw, 1024px"

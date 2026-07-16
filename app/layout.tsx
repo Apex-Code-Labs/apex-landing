@@ -8,6 +8,7 @@ import {
   generateFAQSchema,
 } from '@/lib/schema'
 import { Analytics } from '@vercel/analytics/react'
+import Providers from '@/components/Providers'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -58,7 +59,7 @@ export default function RootLayout({
   const faqSchema = generateFAQSchema()
 
   return (
-    <html lang="es-SV" className={`scroll-smooth ${poppins.variable}`}>
+    <html lang="es-SV" className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#121C8C" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -99,7 +100,7 @@ export default function RootLayout({
         )}
       </head>
       <body className="antialiased">
-        {children}
+        <Providers>{children}</Providers>
         <Analytics />
       </body>
     </html>
