@@ -1,12 +1,28 @@
 import type { Metadata } from 'next'
+import { Poppins } from 'next/font/google'
 import './globals.css'
-import { generateOrganizationSchema, generateWebSiteSchema } from '@/lib/schema'
-import { Analytics } from '@vercel/analytics/react'
+import {
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+  generateSoftwareApplicationSchema,
+  generateFAQSchema,
+} from '@/lib/schema'
+import Providers from '@/components/Providers'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'Apex Code Labs - Impulsa tu empresa con IA, CRM, ERP y Facturación Electrónica',
-  description: 'Automatizamos tus procesos y escalamos tu operación con soluciones a medida: desde marketing con CRM hasta ERPs y facturación electrónica en El Salvador, potenciadas por IA.',
-  keywords: 'IA, automatización, CRM, ERP, facturación electrónica, El Salvador, ChatGPT, Claude, Gemini, Grok',
+  metadataBase: new URL('https://apexcodelabs.com'),
+  title: 'Apex ERP — Sistema ERP con Facturación Electrónica y POS en El Salvador',
+  description:
+    'Gestiona tu negocio completo desde una sola plataforma: ventas, POS, inventario, comandas, recetas, multi-sucursal y facturación electrónica DTE con transmisión directa al Ministerio de Hacienda. Desde $5.63/mes con IVA incluido.',
+  keywords:
+    'facturación electrónica El Salvador, DTE, sistema ERP, punto de venta, POS restaurante, Ministerio de Hacienda, inventario, comandas, El Salvador',
   authors: [{ name: 'Apex Code Labs' }],
   creator: 'Apex Code Labs',
   publisher: 'Apex Code Labs',
@@ -16,28 +32,19 @@ export const metadata: Metadata = {
     locale: 'es_SV',
     url: 'https://apexcodelabs.com',
     siteName: 'Apex Code Labs',
-    title: 'Apex Code Labs - Impulsa tu empresa con IA, CRM, ERP y Facturación Electrónica',
-    description: 'Automatizamos tus procesos y escalamos tu operación con soluciones a medida: desde marketing con CRM hasta ERPs y facturación electrónica en El Salvador, potenciadas por IA.',
-    images: [
-      {
-        url: '/og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Apex Code Labs - Automatización con IA',
-      },
-    ],
+    title: 'Apex ERP — Sistema ERP con Facturación Electrónica y POS en El Salvador',
+    description:
+      'Ventas, POS, inventario, comandas y facturación electrónica DTE transmitida directamente al Ministerio de Hacienda. Desde $5.63/mes.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Apex Code Labs — Apex ERP' }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@apexcodelabs',
-    creator: '@apexcodelabs',
-    title: 'Apex Code Labs - Impulsa tu empresa con IA, CRM, ERP y Facturación Electrónica',
-    description: 'Automatizamos tus procesos y escalamos tu operación con soluciones a medida: desde marketing con CRM hasta ERPs y facturación electrónica en El Salvador, potenciadas por IA.',
-    images: ['/og.jpg'],
+    title: 'Apex ERP — ERP con Facturación Electrónica y POS en El Salvador',
+    description:
+      'Ventas, POS, inventario, comandas y DTE transmitido directamente al Ministerio de Hacienda. Desde $5.63/mes.',
+    images: ['/og.png'],
   },
-  alternates: {
-    canonical: 'https://apexcodelabs.com',
-  },
+  alternates: { canonical: 'https://apexcodelabs.com' },
 }
 
 export default function RootLayout({
@@ -47,15 +54,15 @@ export default function RootLayout({
 }) {
   const organizationSchema = generateOrganizationSchema()
   const websiteSchema = generateWebSiteSchema()
+  const softwareApplicationSchema = generateSoftwareApplicationSchema()
+  const faqSchema = generateFAQSchema()
 
   return (
-    <html lang="es-SV" className="scroll-smooth">
+    <html lang="es-SV" className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#0E3A4A" />
+        <meta name="theme-color" content="#121C8C" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
@@ -69,7 +76,19 @@ export default function RootLayout({
             __html: JSON.stringify(websiteSchema),
           }}
         />
-        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(softwareApplicationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
           <script
@@ -80,8 +99,7 @@ export default function RootLayout({
         )}
       </head>
       <body className="antialiased">
-        {children}
-        <Analytics />
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

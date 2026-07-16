@@ -8,26 +8,32 @@
   }
 
   body {
-    @apply bg-background-light dark:bg-background-dark text-primary dark:text-white;
+    @apply bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-primary dark:text-white;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary hover:bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply bg-primary hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
   }
 
   .btn-accent {
-    @apply bg-accent hover:bg-accent-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply text-primary font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:brightness-105;
+    background-image: linear-gradient(135deg, #13C6AB 0%, #96E5AC 100%);
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary dark:border-white dark:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 hover:bg-primary hover:text-white;
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700;
+    @apply bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-800;
   }
 
   .section-padding {
@@ -36,5 +42,26 @@
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .brand-gradient {
+    background-image: linear-gradient(135deg, #13C6AB 0%, #96E5AC 100%);
+  }
+
+  /* Gradiente de marca para TEXTO sobre fondos claros: tonos profundos de la
+     misma ramp (4.2:1 mínimo sobre primary-50); en dark vuelve al gradiente
+     claro (8:1 sobre gray-900). Los tonos claros #13C6AB/#96E5AC no pasan 3:1
+     sobre blanco — no usarlos como texto en light mode. */
+  .text-gradient-brand {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(135deg, #085C4F 0%, #0C7F6E 100%);
+  }
+
+  .dark .text-gradient-brand {
+    background-image: linear-gradient(135deg, #13C6AB 0%, #96E5AC 100%);
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-widest text-accent-700 dark:text-accent-300;
   }
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Metadata } from 'next'
+import Logo from '@/components/Logo'
+import { WA_NUMBER, waLink } from '@/lib/contact'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidad - Apex Code Labs',
@@ -16,13 +17,7 @@ export default function PoliticaPrivacidadPage() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/logo.svg"
-                alt="Apex Code Labs"
-                width={150}
-                height={50}
-                className="h-10 w-auto filter brightness-0 invert"
-              />
+              <Logo variant="dark" />
             </Link>
             <Link
               href="/"
@@ -181,9 +176,9 @@ export default function PoliticaPrivacidadPage() {
                 10. Cambios a esta Política
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-                Podemos actualizar esta política de privacidad ocasionalmente. Te notificaremos sobre 
-                cambios significativos publicando la nueva política en nuestro sitio web y actualizando 
-                la fecha de "última actualización".
+                Podemos actualizar esta política de privacidad ocasionalmente. Te notificaremos sobre
+                cambios significativos publicando la nueva política en nuestro sitio web y actualizando
+                la fecha de &quot;última actualización&quot;.
               </p>
             </section>
 
@@ -203,7 +198,7 @@ export default function PoliticaPrivacidadPage() {
                   Email: <a href="mailto:privacidad@apexcodelabs.com" className="text-primary hover:underline">privacidad@apexcodelabs.com</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-300 mb-2">
-                  WhatsApp: <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA_NUMBER || '503XXXXXXXX'}`} className="text-primary hover:underline">+{process.env.NEXT_PUBLIC_WA_NUMBER || '503 XXXX-XXXX'}</a>
+                  WhatsApp: <a href={waLink()} className="text-primary hover:underline">+{WA_NUMBER}</a>
                 </p>
                 <p className="text-gray-600 dark:text-gray-300">
                   Ubicación: El Salvador

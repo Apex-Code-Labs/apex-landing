@@ -32,12 +32,10 @@ export default function ContactForm() {
   const [errorMessage, setErrorMessage] = useState('')
 
   const services = [
-    'Marketing con CRM',
-    'ERP - Administración de activos',
-    'Facturación Electrónica SV',
-    'Automatizaciones con IA',
-    'Consultoría general',
-    'Otro'
+    'Solo Facturación Electrónica (DTE)',
+    'ERP completo',
+    'Transmisión DTE (Orquestador)',
+    'Aún no lo sé — quiero una demo',
   ]
 
   const countries = [
@@ -120,10 +118,10 @@ export default function ContactForm() {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-4">
-            Solicita tu Asesoría Gratuita
+            Agenda tu demo gratuita de 30 minutos
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Cuéntanos sobre tu proyecto y te ayudaremos a encontrar la mejor solución
+            Te mostramos el sistema en vivo y resolvemos todas tus dudas. Sin instalación y sin compromiso.
           </p>
         </div>
 
@@ -232,7 +230,7 @@ export default function ContactForm() {
 
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Servicio de interés *
+                    ¿Qué te interesa? *
                   </label>
                   <select
                     id="service"

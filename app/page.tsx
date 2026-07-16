@@ -1,7 +1,11 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import Services from '@/components/Services'
-import Process from '@/components/Process'
+import ProblemSolution from '@/components/ProblemSolution'
+import Modules from '@/components/Modules'
+import DteSection from '@/components/DteSection'
+import RestaurantFlow from '@/components/RestaurantFlow'
+import Pricing from '@/components/Pricing'
+import Comparison from '@/components/Comparison'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -12,8 +16,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <Services />
-      <Process />
+      <ProblemSolution />
+      <Modules />
+      <DteSection />
+      <RestaurantFlow />
+      <Pricing />
+      <Comparison />
       <FAQ />
       <ContactForm />
       <Footer />
