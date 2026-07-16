@@ -42,6 +42,8 @@ export default function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
             aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               {isMenuOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
@@ -50,7 +52,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800" id="mobile-menu">
             <div className="flex flex-col space-y-4">
               {NAV.map((item) => (
                 <a
