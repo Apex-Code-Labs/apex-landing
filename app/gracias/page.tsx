@@ -11,11 +11,11 @@ export default function GraciasPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background-light to-white dark:from-background-dark dark:to-gray-900 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950 flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         {/* Success Icon */}
         <div className="mb-8">
-          <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
@@ -33,8 +33,8 @@ export default function GraciasPage() {
         </h1>
 
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-          Hemos recibido tu mensaje y nos pondremos en contacto contigo dentro de las próximas 24 horas 
-          para discutir tu proyecto y cómo podemos ayudarte a impulsar tu empresa con nuestras soluciones.
+          Hemos recibido tu mensaje y nos pondremos en contacto contigo dentro de las próximas 24 horas
+          para coordinar tu demo gratuita de Apex ERP y resolver todas tus dudas.
         </p>
 
         {/* Next Steps */}
@@ -50,10 +50,10 @@ export default function GraciasPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-primary dark:text-white mb-2">
-                  Revisión
+                  Revisamos tu solicitud
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Analizaremos tu solicitud y prepararemos una propuesta inicial
+                  Nuestro equipo revisa tu mensaje y prepara la demo según lo que te interesa: facturación DTE, ERP completo u orquestador.
                 </p>
               </div>
             </div>
@@ -64,24 +64,24 @@ export default function GraciasPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-primary dark:text-white mb-2">
-                  Contacto
+                  Te contactamos
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Te contactaremos para agendar una llamada de descubrimiento
+                  Te escribimos en menos de 24 horas para agendar tu demo gratuita de 30 minutos, por WhatsApp o correo.
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">
+              <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
                 3
               </div>
               <div>
                 <h3 className="font-semibold text-primary dark:text-white mb-2">
-                  Propuesta
+                  Demo en vivo
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Presentaremos una solución personalizada para tu empresa
+                  Te mostramos el sistema funcionando con casos reales de tu rubro y resolvemos todas tus dudas. Sin compromiso.
                 </p>
               </div>
             </div>

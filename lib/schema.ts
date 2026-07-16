@@ -14,13 +14,12 @@ export function generateOrganizationSchema() {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+503-XXXX-XXXX",
+      "telephone": "+503-7931-2064",
       "contactType": "customer service",
       "availableLanguage": ["Spanish", "English"]
     },
     "sameAs": [
-      "https://linkedin.com/company/apex-code-labs",
-      "https://twitter.com/apexcodelabs"
+      "https://linkedin.com/company/apex-code-labs"
     ]
   }
 }
@@ -32,12 +31,7 @@ export function generateWebSiteSchema() {
     "name": "Apex Code Labs",
     "url": "https://apexcodelabs.com",
     "description": "Apex ERP: ventas, POS, inventario, comandas y facturación electrónica DTE en una sola plataforma para negocios en El Salvador.",
-    "inLanguage": "es-SV",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://apexcodelabs.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "inLanguage": "es-SV"
   }
 }
 

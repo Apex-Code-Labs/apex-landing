@@ -15,7 +15,7 @@ const ROWS: { label: string; apex: Cell; facxi: Cell; n1co: Cell; acatha: Cell; 
 
 function CellValue({ value, highlight = false }: { value: Cell; highlight?: boolean }) {
   if (value === true) return <Check className={`w-5 h-5 mx-auto ${highlight ? 'text-accent-700 dark:text-accent-300' : 'text-gray-400'}`} aria-label="Sí" />
-  if (value === false) return <X className="w-5 h-5 mx-auto text-red-400" aria-label="No" />
+  if (value === false) return <X className="w-5 h-5 mx-auto text-red-500" aria-label="No" />
   return <span className={highlight ? 'font-bold text-primary dark:text-white' : 'text-gray-600 dark:text-gray-400'}>{value}</span>
 }
 

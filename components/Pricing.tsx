@@ -30,6 +30,7 @@ export default function Pricing() {
             <button
               key={g.id}
               onClick={() => setGroupId(g.id)}
+              aria-pressed={g.id === groupId}
               className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-colors ${
                 g.id === groupId
                   ? 'bg-primary text-white'
