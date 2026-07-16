@@ -7,7 +7,6 @@ import {
   generateSoftwareApplicationSchema,
   generateFAQSchema,
 } from '@/lib/schema'
-import { Analytics } from '@vercel/analytics/react'
 import Providers from '@/components/Providers'
 
 const poppins = Poppins({
@@ -101,7 +100,6 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <Providers>{children}</Providers>
-        <Analytics />
       </body>
     </html>
   )
