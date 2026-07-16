@@ -278,7 +278,7 @@ export default function ContactForm() {
                 />
                 <label htmlFor="consent" className="text-sm text-gray-600 dark:text-gray-300">
                   Acepto la{' '}
-                  <a href="/politica-privacidad" className="text-primary hover:underline">
+                  <a href="/politica-privacidad" className="text-primary underline">
                     política de privacidad
                   </a>{' '}
                   y autorizo el tratamiento de mis datos personales para recibir información sobre los servicios de Apex Code Labs. *

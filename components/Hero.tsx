@@ -54,7 +54,6 @@ export default function Hero() {
               srcLight={posLight}
               srcDark={posDark}
               alt="Punto de venta de Apex ERP con catálogo de productos y cobro con DTE"
-              priority
               sizes="(max-width: 1024px) 100vw, 1024px"
               className="w-full h-auto"
             />
@@ -67,7 +66,7 @@ export default function Hero() {
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-primary dark:text-white mb-1">{title}</h3>
+                  <p className="font-semibold text-primary dark:text-white mb-1">{title}</p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">{text}</p>
                 </div>
               </div>

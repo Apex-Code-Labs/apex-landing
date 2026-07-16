@@ -60,6 +60,10 @@ export default function RootLayout({
   return (
     <html lang="es-SV" className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
       <head>
+        {/* Workaround opennextjs-cloudflare: su esbuild (keepNames) inyecta
+            llamadas a __name en scripts inline serializados (next-themes);
+            sin este no-op el script anti-FOUC muere con ReferenceError. */}
+        <script dangerouslySetInnerHTML={{ __html: 'self.__name=self.__name||(f=>f)' }} />
         <meta name="theme-color" content="#121C8C" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
