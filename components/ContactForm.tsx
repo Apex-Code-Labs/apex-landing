@@ -90,7 +90,8 @@ export default function ContactForm() {
           phone: formData.phone,
           country: formData.country,
           service: formData.service,
-          message: formData.message
+          message: formData.message,
+          honeypot: formData.honeypot
         }),
       })
 
