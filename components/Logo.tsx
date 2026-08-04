@@ -6,9 +6,9 @@ export default function Logo({ variant = 'light' }: { variant?: 'light' | 'dark'
       <Image
         src="/brand/isotipo.svg"
         alt=""
-        width={40}
+        width={22}
         height={40}
-        className="h-9 w-9 md:h-10 md:w-10"
+        className="h-9 w-auto md:h-10"
         unoptimized
       />
       <span
