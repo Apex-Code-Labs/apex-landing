@@ -60,7 +60,7 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">© {year} Apex Code Labs. Todos los derechos reservados.</p>
           <div className="flex space-x-6">
             <a href="/politica-privacidad" className="text-gray-400 hover:text-mint text-sm font-medium transition-colors">Política de Privacidad</a>
-            <a href="/ERP-Brochure-Comercial-v4.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-mint text-sm font-medium transition-colors">
+            <a href="/ERP-Brochure-Comercial-v6.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-mint text-sm font-medium transition-colors">
               Descargar brochure (PDF)
             </a>
           </div>

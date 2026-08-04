@@ -99,7 +99,7 @@ export default function Pricing() {
 
         <p className="text-center mt-10 text-sm text-gray-500">
           ¿Necesitas más detalle?{' '}
-          <a href="/ERP-Brochure-Comercial-v4.pdf" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-accent-300 font-semibold underline">
+          <a href="/ERP-Brochure-Comercial-v6.pdf" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-accent-300 font-semibold underline">
             Descarga el brochure completo (PDF)
           </a>{' '}
           con add-ons y condiciones.

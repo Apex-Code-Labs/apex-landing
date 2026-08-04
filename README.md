@@ -47,7 +47,7 @@ lib/
 public/
   brand/                   # isotipo SVG + lockups PNG
   screenshots/             # pos_{light,dark}.webp · comandas_{light,dark}.webp (2048px, cwebp -q 82)
-  ERP-Brochure-Comercial-v4.pdf   # linkeado desde Precios y Footer
+  ERP-Brochure-Comercial-v6.pdf   # linkeado desde Precios y Footer
 docs/
   DEPLOY-CLOUDFLARE.md     # guía de deploy completa
   brand/                   # PDF de línea gráfica (interno, NO publicar en public/)
