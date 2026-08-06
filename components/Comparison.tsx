@@ -2,15 +2,21 @@ import { Check, X } from 'lucide-react'
 
 type Cell = boolean | string
 
-const ROWS: { label: string; apex: Cell; facxi: Cell; n1co: Cell; acatha: Cell; facturaya: Cell }[] = [
-  { label: 'Precio desde', apex: '$5.63/mes', facxi: '$4.99/mes', n1co: '$15/mes', acatha: '$250/año', facturaya: '$5.90/mes' },
-  { label: 'ERP integrado', apex: true, facxi: 'Parcial', n1co: false, acatha: 'Parcial', facturaya: false },
-  { label: 'Ventas integradas con DTE', apex: true, facxi: false, n1co: false, acatha: false, facturaya: false },
-  { label: 'Comandas, mesas y cocina', apex: true, facxi: false, n1co: false, acatha: false, facturaya: false },
-  { label: 'Recetas con descuento de insumos', apex: true, facxi: false, n1co: false, acatha: false, facturaya: false },
-  { label: 'Caja registradora con corte X/Z', apex: true, facxi: false, n1co: false, acatha: 'Parcial', facturaya: false },
-  { label: 'App móvil PWA (iOS + Android)', apex: true, facxi: 'Web', n1co: true, acatha: false, facturaya: 'Web' },
-  { label: 'Certificación MH automática', apex: true, facxi: false, n1co: false, acatha: false, facturaya: false },
+// Comparación por CATEGORÍA de solución, nunca contra proveedores nombrados:
+// no le entrega al prospecto una lista de alternativas, no envejece cuando un
+// competidor saca una feature, y no afirma nada refutable sobre una empresa concreta.
+const COLUMNS = ['Facturadores DTE', 'POS genérico', 'Sistema contable', 'Proceso manual'] as const
+
+const ROWS: { label: string; apex: Cell; others: [Cell, Cell, Cell, Cell] }[] = [
+  { label: 'Ventas, inventario, caja y DTE en un solo sistema', apex: true, others: ['Parcial', 'Parcial', 'Parcial', false] },
+  { label: 'La venta genera el DTE sin doble digitación', apex: true, others: [false, 'Vía integración', false, false] },
+  { label: 'Inventario con kardex y multi-bodega', apex: true, others: ['Básico', 'Básico', 'Varía', false] },
+  { label: 'Comandas, mesas y cocina', apex: true, others: [false, 'Varía', false, false] },
+  { label: 'Recetas con descuento de insumos y costo real', apex: true, others: [false, 'Rara vez', false, false] },
+  { label: 'Caja con arqueo, corte X y corte Z', apex: true, others: [false, true, 'Parcial', false] },
+  { label: 'App instalable en tablet y teléfono (PWA)', apex: true, others: ['Web', 'Varía', false, false] },
+  { label: 'Certificación ante Hacienda acompañada', apex: true, others: [false, false, false, false] },
+  { label: 'Desarrollo a la medida sobre la misma plataforma', apex: true, others: [false, false, false, false] },
 ]
 
 function CellValue({ value, highlight = false }: { value: Cell; highlight?: boolean }) {
@@ -24,11 +30,12 @@ export default function Comparison() {
     <section id="comparativa" className="section-padding bg-white dark:bg-gray-950">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <p className="eyebrow mb-3">¿Por qué elegirnos?</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Comparativa con otras soluciones</h2>
+          <p className="eyebrow mb-3">Dónde encaja Apex</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Un sistema, no cuatro programas sueltos</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Somos el único sistema salvadoreño que integra nativamente las ventas
-            con la facturación electrónica.
+            La mayoría de las soluciones resuelve una parte del problema: emitir el
+            documento, cobrar, o llevar la contabilidad. Apex conecta la venta, el
+            inventario, la caja y el DTE en un solo flujo.
           </p>
         </div>
 
@@ -38,10 +45,9 @@ export default function Comparison() {
               <tr className="bg-navy text-white">
                 <th className="px-4 py-4 text-left font-semibold">Característica</th>
                 <th className="px-4 py-4 font-bold bg-primary">Apex ERP</th>
-                <th className="px-4 py-4 font-semibold">Facxi</th>
-                <th className="px-4 py-4 font-semibold">N1co</th>
-                <th className="px-4 py-4 font-semibold">Acatha</th>
-                <th className="px-4 py-4 font-semibold">FacturaYa</th>
+                {COLUMNS.map((c) => (
+                  <th key={c} className="px-4 py-4 font-semibold">{c}</th>
+                ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 dark:divide-gray-800">
@@ -49,15 +55,19 @@ export default function Comparison() {
                 <tr key={row.label} className="bg-white dark:bg-gray-950">
                   <td className="px-4 py-3.5 text-left font-medium text-gray-700 dark:text-gray-300">{row.label}</td>
                   <td className="px-4 py-3.5 bg-accent-50/60 dark:bg-accent-900/30"><CellValue value={row.apex} highlight /></td>
-                  <td className="px-4 py-3.5"><CellValue value={row.facxi} /></td>
-                  <td className="px-4 py-3.5"><CellValue value={row.n1co} /></td>
-                  <td className="px-4 py-3.5"><CellValue value={row.acatha} /></td>
-                  <td className="px-4 py-3.5"><CellValue value={row.facturaya} /></td>
+                  {row.others.map((cell, i) => (
+                    <td key={COLUMNS[i]} className="px-4 py-3.5"><CellValue value={cell} /></td>
+                  ))}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        <p className="mt-5 text-center text-xs text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
+          Comparación por categoría de solución, no contra proveedores específicos: las
+          capacidades varían entre productos de una misma categoría.
+        </p>
       </div>
     </section>
   )
