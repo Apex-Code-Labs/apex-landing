@@ -12,7 +12,7 @@ const DOC_TYPES = [
 
 const FEATURES = [
   { icon: ShieldCheck, title: 'Firma digital integrada', text: 'PKCS#12, RSA-SHA256 y almacenamiento por 10 años, como exige la ley.' },
-  { icon: Clock, title: 'Certificación MH automatizada', text: 'Nosotros te certificamos: los DTEs de prueba requeridos se generan y transmiten en horas, no semanas. 98%+ de aceptación.' },
+  { icon: Clock, title: 'Certificación MH automatizada', text: 'Nosotros te certificamos: los DTEs de prueba que exige el MH se generan y transmiten en horas, no semanas.' },
   { icon: RefreshCw, title: 'Modo contingencia', text: 'Si el MH no está disponible, sigues vendiendo; el sistema retransmite automáticamente.' },
   { icon: Plug, title: 'Orquestador para tu sistema', text: '¿Ya tienes tu propio software? Envíanos el JSON: firmamos, transmitimos y almacenamos por ti.' },
 ]

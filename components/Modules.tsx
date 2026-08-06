@@ -51,8 +51,8 @@ export default function Modules() {
               Cuando tu cajero cierra una venta, el sistema descuenta inventario
               (incluidos los insumos vía recetas), registra la transacción en caja,
               genera y transmite el DTE al MH, e imprime el ticket térmico. Todo en
-              un solo paso, sin duplicar datos. Somos la única plataforma salvadoreña
-              con esta integración completa.
+              un solo paso: nadie vuelve a teclear la venta en otro programa, y el
+              inventario, la caja y Hacienda quedan cuadrados con el mismo dato.
             </p>
           </div>
         </div>
