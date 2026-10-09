@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T04:04:41.506620+00:00",
+  "title": "Design System: Apex ERP",
+  "extensions": {
+    "colorMeta": {
+      "galactic-cruise": {
+        "role": "primary",
+        "displayName": "Galactic Cruise",
+        "tonalRamp": [
+          "#070B38",
+          "#0B1154",
+          "#0E1670",
+          "#121C8C",
+          "#2A3BB8",
+          "#4F5FD3",
+          "#A7AFE9",
+          "#EBEDFA"
+        ]
+      },
+      "galactic-cruise-deep": {
+        "role": "primary",
+        "displayName": "Galactic Cruise Deep",
+        "tonalRamp": [
+          "#070B38",
+          "#0B1154",
+          "#0E1670",
+          "#121C8C",
+          "#2A3BB8",
+          "#4F5FD3",
+          "#A7AFE9",
+          "#EBEDFA"
+        ]
+      },
+      "galactic-cruise-wash": {
+        "role": "primary",
+        "displayName": "Galactic Cruise Wash",
+        "tonalRamp": [
+          "#070B38",
+          "#0B1154",
+          "#0E1670",
+          "#121C8C",
+          "#2A3BB8",
+          "#4F5FD3",
+          "#A7AFE9",
+          "#EBEDFA"
+        ]
+      },
+      "galactic-cruise-line": {
+        "role": "primary",
+        "displayName": "Galactic Cruise Line",
+        "tonalRamp": [
+          "#070B38",
+          "#0B1154",
+          "#0E1670",
+          "#121C8C",
+          "#2A3BB8",
+          "#4F5FD3",
+          "#A7AFE9",
+          "#EBEDFA"
+        ]
+      },
+      "navy": {
+        "role": "primary",
+        "displayName": "Navy",
+        "tonalRamp": [
+          "#070B38",
+          "#0B1154",
+          "#0E1670",
+          "#121C8C",
+          "#2A3BB8",
+          "#4F5FD3",
+          "#A7AFE9",
+          "#EBEDFA"
+        ]
+      },
+      "turquoise-topaz": {
+        "role": "secondary",
+        "displayName": "Turquoise Topaz",
+        "tonalRamp": [
+          "#053830",
+          "#085C4F",
+          "#0C7F6E",
+          "#0FA38D",
+          "#13C6AB",
+          "#3FD6B9",
+          "#9FEBDC",
+          "#E7FAF6"
+        ]
+      },
+      "turquoise-topaz-ink": {
+        "role": "secondary",
+        "displayName": "Turquoise Topaz Ink",
+        "tonalRamp": [
+          "#053830",
+          "#085C4F",
+          "#0C7F6E",
+          "#0FA38D",
+          "#13C6AB",
+          "#3FD6B9",
+          "#9FEBDC",
+          "#E7FAF6"
+        ]
+      },
+      "turquoise-topaz-wash": {
+        "role": "secondary",
+        "displayName": "Turquoise Topaz Wash",
+        "tonalRamp": [
+          "#053830",
+          "#085C4F",
+          "#0C7F6E",
+          "#0FA38D",
+          "#13C6AB",
+          "#3FD6B9",
+          "#9FEBDC",
+          "#E7FAF6"
+        ]
+      },
+      "teal-deer": {
+        "role": "secondary",
+        "displayName": "Teal Deer",
+        "tonalRamp": [
+          "#1F5C33",
+          "#2E8A4C",
+          "#5FCB80",
+          "#7AD996",
+          "#96E5AC",
+          "#C0F0CE",
+          "#DDF7E5",
+          "#EAFAEF"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "counter": {
+        "role": "neutral",
+        "displayName": "Counter",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "night-raised": {
+        "role": "neutral",
+        "displayName": "Night Raised",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1F2937",
+          "#374151",
+          "#4B5563",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Sólo el H1 del hero."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de sección, alineados a la izquierda."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Ítems, pasos, preguntas, nombres de plan."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Bajada de sección en ink-muted."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto de ítems y respuestas."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Botones, chips, «Paso N»."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Precios con cifras tabulares."
+      }
+    },
+    "shadows": [
+      {
+        "name": "product-lift",
+        "value": "0 -12px 48px -12px rgba(18,28,140,0.18)",
+        "purpose": "Marco de la captura del hero; desaparece en dark."
+      },
+      {
+        "name": "button-rest",
+        "value": "0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)",
+        "purpose": "Botones en reposo."
+      },
+      {
+        "name": "button-hover",
+        "value": "0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1)",
+        "purpose": "Botones al hover."
+      },
+      {
+        "name": "float",
+        "value": "0 6px 20px -4px rgba(0,0,0,0.3)",
+        "purpose": "Botón flotante de WhatsApp."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": "200ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Única transición: cambios de estado (hover, foco, toggle). Sin animaciones de atención."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal: agendar demo. Una por vista.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Agenda tu demo <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary{font-family:Poppins,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;background:#121C8C;color:#fff;font-weight:600;font-size:1rem;padding:12px 24px;border-radius:8px;text-decoration:none;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);transition:all .2s}.ds-btn-primary:hover{background:#0E1670;box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}.ds-btn-primary:hover svg{transform:translateX(2px)}.ds-btn-primary svg{transition:transform .2s}.ds-btn-primary:focus-visible{outline:2px solid #0FA38D;outline-offset:2px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Acción secundaria (WhatsApp, planes no recomendados).",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">WhatsApp</a>",
+      "css": ".ds-btn-outline{font-family:Poppins,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;border:2px solid #121C8C;color:#121C8C;background:transparent;font-weight:600;padding:12px 24px;border-radius:8px;text-decoration:none;transition:all .2s}.ds-btn-outline:hover{background:#121C8C;color:#fff}.ds-btn-outline:focus-visible{outline:2px solid #0FA38D;outline-offset:2px}"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Sólo el CTA del plan recomendado.",
+      "html": "<a class=\"ds-btn-accent\" href=\"#\">Agenda tu demo</a>",
+      "css": ".ds-btn-accent{font-family:Poppins,system-ui,sans-serif;display:inline-flex;background-image:linear-gradient(135deg,#13C6AB 0%,#96E5AC 100%);color:#121C8C;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;box-shadow:0 4px 6px -1px rgba(0,0,0,.1);transition:all .2s}.ds-btn-accent:hover{filter:brightness(1.05);box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}.ds-btn-accent:focus-visible{outline:2px solid #0FA38D;outline-offset:2px}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Selector de grupo de precios (aria-pressed).",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"false\">Solo Facturación (DTE)</button><button class=\"ds-chip\" aria-pressed=\"true\">ERP completo</button></div>",
+      "css": ".ds-chips{display:flex;gap:8px;flex-wrap:wrap}.ds-chip{font-family:Poppins,system-ui,sans-serif;padding:10px 20px;border-radius:9999px;font-weight:600;font-size:.875rem;background:#fff;color:#374151;border:1px solid #E5E7EB;cursor:pointer;transition:all .2s}.ds-chip:hover{border-color:#121C8C}.ds-chip[aria-pressed=true]{background:#121C8C;color:#fff;border-color:#121C8C}.ds-chip:focus-visible{outline:2px solid #0FA38D;outline-offset:2px}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campos del formulario de demo.",
+      "html": "<label class=\"ds-field\"><span>Empresa *</span><input class=\"ds-input\" placeholder=\"Nombre de tu empresa\"></label>",
+      "css": ".ds-field{font-family:Poppins,system-ui,sans-serif;display:grid;gap:8px;font-size:.875rem;font-weight:500;color:#374151}.ds-input{font-family:Poppins,system-ui,sans-serif;font-size:1rem;padding:12px 16px;border:1px solid #D1D5DB;border-radius:8px;background:#fff;color:#374151;outline:none;transition:box-shadow .2s,border-color .2s}.ds-input:focus{border-color:transparent;box-shadow:0 0 0 2px #121C8C}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Header fijo con links, toggle de tema y CTA.",
+      "html": "<nav class=\"ds-nav\"><strong>apex code labs</strong><div><a href=\"#\">Módulos</a><a href=\"#\">Facturación DTE</a><a href=\"#\">Precios</a><a class=\"ds-nav-cta\" href=\"#\">Agenda tu demo</a></div></nav>",
+      "css": ".ds-nav{font-family:Poppins,system-ui,sans-serif;display:flex;align-items:center;justify-content:space-between;height:80px;padding:0 32px;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border-bottom:1px solid #E5E7EB}.ds-nav strong{color:#121C8C;font-size:1.25rem;font-weight:700}.ds-nav div{display:flex;align-items:center;gap:32px}.ds-nav a{color:#374151;font-weight:500;text-decoration:none;transition:color .2s}.ds-nav a:hover{color:#121C8C}.ds-nav .ds-nav-cta{background:#121C8C;color:#fff;font-weight:600;padding:10px 24px;border-radius:8px}.ds-nav .ds-nav-cta:hover{background:#0E1670;color:#fff}"
+    },
+    {
+      "name": "Divider List",
+      "kind": "custom",
+      "description": "Firma de El Mostrador: enumeraciones con divisor, sin cajas.",
+      "html": "<ul class=\"ds-dlist\"><li><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"8\" cy=\"21\" r=\"1\"/><circle cx=\"19\" cy=\"21\" r=\"1\"/><path d=\"M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12\"/></svg><div><h3>Ventas y POS</h3><p>Punto de venta completo con factura automática al cerrar cada venta.</p></div></li><li><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z\"/></svg><div><h3>Inventario y Kardex</h3><p>Stock en tiempo real con Kardex automático.</p></div></li></ul>",
+      "css": ".ds-dlist{font-family:Poppins,system-ui,sans-serif;list-style:none;margin:0;padding:0;border-top:1px solid #E5E7EB;max-width:420px}.ds-dlist li{display:flex;gap:16px;padding:24px 0;border-bottom:1px solid #E5E7EB}.ds-dlist svg{flex-shrink:0;margin-top:4px;color:#0C7F6E}.ds-dlist h3{margin:0 0 6px;font-size:1rem;font-weight:700;color:#121C8C;letter-spacing:-.01em}.ds-dlist p{margin:0;font-size:.875rem;line-height:1.625;color:#4B5563}"
+    },
+    {
+      "name": "Integration Flow",
+      "kind": "custom",
+      "description": "Un dato, un paso: la secuencia de la venta.",
+      "html": "<div class=\"ds-flow\"><h3>Integración nativa POS → Inventario → DTE</h3><ol><li class=\"on\">Venta en POS</li><li>Inventario e insumos</li><li>Caja</li><li>DTE al MH</li><li>Ticket térmico</li></ol></div>",
+      "css": ".ds-flow{font-family:Poppins,system-ui,sans-serif;background:#121C8C;color:#fff;border-radius:16px;padding:32px}.ds-flow h3{margin:0 0 20px;font-size:1.5rem;font-weight:700}.ds-flow ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 8px;align-items:center}.ds-flow li{padding:8px 14px;border-radius:9999px;background:rgba(255,255,255,.1);font-size:.875rem;font-weight:600}.ds-flow li.on{background:#96E5AC;color:#070B38}.ds-flow li+li::before{content:'→';color:#96E5AC;margin:0 8px 0 -4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Mostrador",
+    "overview": "Apex ERP se diseña como el mostrador de una PYME salvadoreña: un lugar de trabajo\ndiario, práctico y cercano, donde todo está a la vista y nada sobra. Se habla\ndirecto y sin jerga. La interfaz no presume tecnología. Muestra el producto real\n(capturas del POS y de comandas) y lo ordena para que el dueño del negocio entienda\nen segundos qué resuelve y cuánto cuesta.\n\nLa estructura la dan las **líneas, no las cajas**. Las secciones se apoyan en\ndivisores finos y en cambios de fondo: blanco, el gris «mostrador» y el navy para\nel momento fiscal. Los títulos son grandes y seguros, alineados a la izquierda, con\nla bajada al costado como quien explica de frente. El color de marca aparece con\nintención: Galactic Cruise para la voz y la acción, Turquoise Topaz para el dato\nque importa.\n\nSe rechaza explícitamente el look de plantilla SaaS: hero centrado con badge y tres\níconos, etiquetas en mayúsculas sobre cada título, texto con gradiente y grillas de\ntarjetas idénticas de ícono + título + texto.",
+    "keyCharacteristics": [
+      "Plano por defecto: profundidad por fondo y divisor, no por sombra.",
+      "Títulos alineados a la izquierda con la bajada a la derecha en desktop.",
+      "El producto real es la imagen; no hay ilustraciones decorativas.",
+      "Modo claro y oscuro de primera clase, con toggle manual.",
+      "Español neutro con tuteo, directo y sin jerga."
+    ],
+    "rules": [
+      {
+        "name": "The Sello Rule",
+        "body": "Turquoise Topaz y Teal Deer nunca son texto sobre blanco ni fondo de texto blanco (no pasan AA). En fondos claros, el turquesa se escribe con su tinta `turquoise-topaz-ink`; en navy y en modo oscuro va puro.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "El azul habla (títulos, acción) y el turquesa confirma (dato, check, sello). No se intercambian los roles ni se introduce un tercer color de marca.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Kicker Rule",
+        "body": "No hay etiquetas en mayúsculas sobre los títulos. El título carga su propio peso.",
+        "section": "typography"
+      },
+      {
+        "name": "The Solid Emphasis Rule",
+        "body": "El énfasis es por peso, tamaño o color sólido. Nunca se usa texto con gradiente.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lines Not Boxes Rule",
+        "body": "Si el contenido es una enumeración, va como lista separada por divisores `rule`. La tarjeta se reserva para lo que se compara o se elige (planes de precio) y para el formulario.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Counter Rule",
+        "body": "Una superficie nueva no lleva sombra salvo que sea el producto, una acción o algo flotante. Si no es ninguna de las tres, se separa con fondo o divisor.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do alinear los títulos de sección a la izquierda con la cabecera dividida (título en 6 columnas y bajada en 5 desde lg).",
+      "Do listar con divisores de 1px `rule` y reservar la tarjeta para planes de precio y formularios.",
+      "Do escribir el turquesa sobre fondo claro siempre como `turquoise-topaz-ink`.",
+      "Do usar capturas reales del producto en variante clara y oscura (ThemeImage) como única imagen.",
+      "Do usar cifras tabulares en precios y códigos de DTE.",
+      "Do tematizar la selección de texto (`::selection` en turquesa claro con tinta azul) y el foco (anillo turquesa de 2px)."
+    ],
+    "donts": [
+      "Don't poner etiquetas en mayúsculas (eyebrows) sobre los títulos.",
+      "Don't usar texto con gradiente. El gradiente de marca vive sólo en el botón de acento y en la píldora «Recomendado».",
+      "Don't armar grillas de tarjetas idénticas de ícono + título + texto.",
+      "Don't centrar el hero con una píldora arriba y tres íconos abajo.",
+      "Don't poner bordes laterales de color de más de 1px en callouts o tarjetas.",
+      "Don't animar con `ping` ni con pulsos de atención. La única transición es la de estado (200ms).",
+      "Don't usar Turquoise Topaz ni Teal Deer como texto sobre blanco."
+    ]
+  }
+}

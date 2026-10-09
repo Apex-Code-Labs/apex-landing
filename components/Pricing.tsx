@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 import { PRICING_GROUPS, EARLY_ADOPTER_NOTE } from '@/lib/pricing'
-import { getSignupHref } from '@/lib/cta'
+import { getSignupHref, getSignupLabel } from '@/lib/cta'
 
 export default function Pricing() {
   const [groupId, setGroupId] = useState('erp')
@@ -14,8 +14,7 @@ export default function Pricing() {
     <section id="precios" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <p className="eyebrow mb-3">Planes y precios</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Elige el plan para tu negocio</h2>
+          <h2 className="text-3xl md:text-[2.75rem] md:leading-[1.1] font-bold mb-4">Elige el plan para tu negocio</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
             Todos los precios incluyen IVA (13%). Sin permanencia forzada.
           </p>
@@ -91,7 +90,7 @@ export default function Pricing() {
                 href={getSignupHref()}
                 className={`text-center ${plan.recommended ? 'btn-accent' : 'btn-outline'}`}
               >
-                Empezar
+                {getSignupLabel()}
               </a>
             </div>
           ))}

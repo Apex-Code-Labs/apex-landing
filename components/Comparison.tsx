@@ -29,10 +29,9 @@ export default function Comparison() {
   return (
     <section id="comparativa" className="section-padding bg-white dark:bg-gray-950">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <p className="eyebrow mb-3">Dónde encaja Apex</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Un sistema, no cuatro programas sueltos</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <div className="section-head">
+          <h2>Un sistema, no cuatro programas sueltos</h2>
+          <p>
             La mayoría de las soluciones resuelve una parte del problema: emitir el
             documento, cobrar, o llevar la contabilidad. Apex conecta la venta, el
             inventario, la caja y el DTE en un solo flujo.
@@ -64,7 +63,7 @@ export default function Comparison() {
           </table>
         </div>
 
-        <p className="mt-5 text-center text-xs text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
+        <p className="mt-5 text-xs text-gray-500 dark:text-gray-400 max-w-3xl">
           Comparación por categoría de solución, no contra proveedores específicos: las
           capacidades varían entre productos de una misma categoría.
         </p>

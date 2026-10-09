@@ -7,6 +7,19 @@
     scroll-behavior: smooth;
   }
 
+  /* El header es fijo (h-16 / md:h-20): sin esto los anclajes quedan tapados. */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    @apply bg-accent-200 text-primary-900;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent-600;
+  }
+
   body {
     @apply bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300;
     font-feature-settings: "rlig" 1, "calt" 1;
@@ -15,6 +28,11 @@
   h1, h2, h3, h4 {
     @apply text-primary dark:text-white;
     letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
   }
 }
 
@@ -48,20 +66,16 @@
     background-image: linear-gradient(135deg, #13C6AB 0%, #96E5AC 100%);
   }
 
-  /* Gradiente de marca para TEXTO sobre fondos claros: tonos profundos de la
-     misma ramp (4.2:1 mínimo sobre primary-50); en dark vuelve al gradiente
-     claro (8:1 sobre gray-900). Los tonos claros #13C6AB/#96E5AC no pasan 3:1
-     sobre blanco — no usarlos como texto en light mode. */
-  .text-gradient-brand {
-    @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(135deg, #085C4F 0%, #0C7F6E 100%);
+  /* Cabecera de sección: título a la izquierda, bajada a la derecha en desktop. */
+  .section-head {
+    @apply grid gap-4 lg:grid-cols-12 lg:gap-12 items-end mb-12 md:mb-16;
   }
 
-  .dark .text-gradient-brand {
-    background-image: linear-gradient(135deg, #13C6AB 0%, #96E5AC 100%);
+  .section-head > h2 {
+    @apply lg:col-span-6 text-3xl md:text-[2.75rem] md:leading-[1.1] font-bold;
   }
 
-  .eyebrow {
-    @apply text-xs font-bold uppercase tracking-widest text-accent-700 dark:text-accent-300;
+  .section-head > p {
+    @apply lg:col-span-5 lg:col-start-8 text-lg text-gray-600 dark:text-gray-300 leading-relaxed;
   }
 }

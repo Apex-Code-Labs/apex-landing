@@ -21,12 +21,9 @@ export default function DteSection() {
   return (
     <section id="facturacion" className="section-padding bg-navy text-white">
       <div className="container-custom">
-        <div className="text-center mb-14">
-          <p className="eyebrow mb-3 !text-accent">Facturación electrónica</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 !text-white">
-            Cumple con Hacienda sin complicaciones
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <div className="section-head">
+          <h2 className="!text-white">Cumple con Hacienda sin complicaciones</h2>
+          <p className="!text-gray-300">
             Integración completa con el Ministerio de Hacienda de El Salvador:
             todos los requerimientos técnicos y legales vigentes para transmitir DTEs.
           </p>
@@ -47,15 +44,15 @@ export default function DteSection() {
             </ul>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <ul className="grid sm:grid-cols-2 gap-x-10 border-t border-white/10">
             {FEATURES.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                <Icon className="w-7 h-7 text-accent mb-3" />
+              <li key={title} className="py-6 border-b border-white/10">
+                <Icon className="w-6 h-6 text-accent mb-3" aria-hidden="true" />
                 <h3 className="font-bold mb-2 !text-white">{title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{text}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

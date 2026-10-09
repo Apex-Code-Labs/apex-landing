@@ -1,77 +1,69 @@
 import ThemeImage from './ThemeImage'
 import posLight from '@/public/screenshots/pos_light.webp'
 import posDark from '@/public/screenshots/pos_dark.webp'
-import { getSignupHref } from '@/lib/cta'
+import { getSignupHref, getSignupLabel } from '@/lib/cta'
 import { waLink } from '@/lib/contact'
-import { FileCheck2, Smartphone, BadgeDollarSign, MessageCircle } from 'lucide-react'
+import { ArrowRight, MessageCircle } from 'lucide-react'
 
 const PROPS = [
-  { icon: FileCheck2, title: 'Transmisión directa al MH', text: 'DTE generado y transmitido al cobrar. Sin pasos extra.' },
-  { icon: Smartphone, title: 'En cualquier dispositivo', text: 'PWA instalable en tablets y teléfonos, Android e iOS.' },
-  { icon: BadgeDollarSign, title: 'Desde $5.63/mes', text: 'IVA incluido. Sin cargos ocultos ni permanencia.' },
+  { title: 'Transmisión directa al MH', text: 'DTE generado y transmitido al cobrar. Sin pasos extra.' },
+  { title: 'En cualquier dispositivo', text: 'PWA instalable en tablets y teléfonos, Android e iOS.' },
+  { title: 'Desde $5.63/mes', text: 'IVA incluido. Sin cargos ocultos ni permanencia.' },
 ]
 
 export default function Hero() {
   return (
-    <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950">
+    <section className="pt-28 md:pt-40 bg-primary-50 dark:bg-gray-900 overflow-hidden">
       <div className="container-custom">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block mb-6 px-4 py-1.5 rounded-full bg-accent-50 dark:bg-accent-900 text-accent-800 dark:text-accent-100 text-sm font-semibold">
-            Facturación electrónica DTE · El Salvador
-          </span>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+          <h1 className="lg:col-span-7 text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
             Sistema ERP con{' '}
-            <span className="text-gradient-brand">Facturación Electrónica</span>{' '}
+            <span className="text-accent-700 dark:text-accent-300">Facturación Electrónica</span>{' '}
             y POS
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
-            Gestiona tu negocio completo desde una sola plataforma: ventas, POS,
-            inventario, comandas, recetas y multi-sucursal — con DTE transmitido
-            directamente al Ministerio de Hacienda.
-          </p>
+          <div className="lg:col-span-5 lg:pb-2">
+            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+              Gestiona tu negocio completo desde una sola plataforma: ventas, POS,
+              inventario, comandas, recetas y multi-sucursal — con DTE transmitido
+              directamente al Ministerio de Hacienda.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14">
-            <a href={getSignupHref()} className="btn-primary text-lg px-8 py-4 w-full sm:w-auto">
-              Prueba gratis
-            </a>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline text-lg px-8 py-4 w-full sm:w-auto flex items-center justify-center gap-2"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Hablar por WhatsApp
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href={getSignupHref()} className="btn-primary text-lg px-7 py-4 inline-flex items-center justify-center gap-2 group">
+                {getSignupLabel()}
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+              </a>
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline text-lg px-7 py-4 inline-flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 shadow-2xl shadow-primary-100 dark:shadow-none overflow-hidden">
-            <ThemeImage
-              srcLight={posLight}
-              srcDark={posDark}
-              alt="Punto de venta de Apex ERP con catálogo de productos y cobro con DTE"
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="w-full h-auto"
-            />
-          </div>
+        <dl className="mt-14 md:mt-16 grid sm:grid-cols-3 border-t border-primary-200 dark:border-gray-700">
+          {PROPS.map(({ title, text }) => (
+            <div key={title} className="py-5 sm:pr-6 border-b sm:border-b-0 border-primary-100 dark:border-gray-800">
+              <dt className="font-semibold text-primary dark:text-white">{title}</dt>
+              <dd className="text-sm text-gray-600 dark:text-gray-400 mt-1">{text}</dd>
+            </div>
+          ))}
+        </dl>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12 text-left">
-            {PROPS.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg brand-gradient flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-primary dark:text-white mb-1">{title}</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">{text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="mt-6 md:mt-10 -mb-px rounded-t-2xl border border-b-0 border-primary-200 dark:border-gray-700 shadow-[0_-12px_48px_-12px_rgba(18,28,140,0.18)] dark:shadow-none overflow-hidden lg:mx-12">
+          <ThemeImage
+            srcLight={posLight}
+            srcDark={posDark}
+            alt="Punto de venta de Apex ERP con catálogo de productos y cobro con DTE"
+            sizes="(max-width: 1024px) 100vw, 1180px"
+            className="w-full h-auto"
+          />
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
-import { getSignupHref } from '@/lib/cta'
+import { getSignupHref, getSignupLabel } from '@/lib/cta'
 
 const NAV = [
   { href: '#modulos', label: 'Módulos' },
@@ -36,7 +36,7 @@ export default function Header() {
             ))}
             <ThemeToggle />
             <a href={getSignupHref()} className="btn-primary !py-2.5">
-              Prueba gratis
+              {getSignupLabel()}
             </a>
           </nav>
 
@@ -70,7 +70,7 @@ export default function Header() {
                 </a>
               ))}
               <a href={getSignupHref()} onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
-                Prueba gratis
+                {getSignupLabel()}
               </a>
             </div>
           </div>
