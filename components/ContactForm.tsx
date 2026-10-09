@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { waLink } from '@/lib/contact'
 
 interface FormData {
   name: string
@@ -117,17 +118,24 @@ export default function ContactForm() {
   return (
     <section id="contacto" className="section-padding bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-4">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="lg:col-span-5 lg:sticky lg:top-28">
+          <h2 className="text-3xl md:text-[2.75rem] md:leading-[1.1] font-bold text-primary dark:text-white mb-4">
             Agenda tu demo gratuita de 30 minutos
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
             Te mostramos el sistema en vivo y resolvemos todas tus dudas. Sin instalación y sin compromiso.
+          </p>
+          <p className="text-gray-600 dark:text-gray-300">
+            ¿Prefieres escribirnos ahora?{' '}
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary dark:text-accent-300 underline">
+              Habla con nosotros por WhatsApp
+            </a>
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="card p-8">
+        <div className="lg:col-span-7">
+          <div className="card p-6 md:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot field - hidden from users */}
               <input
@@ -309,6 +317,7 @@ export default function ContactForm() {
               </button>
             </form>
           </div>
+        </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import {
   ShoppingCart, FileCheck2, Package, Users, Truck, Warehouse,
-  BarChart3, ShieldCheck, ChefHat, Utensils, Banknote, Smartphone, Zap,
+  BarChart3, ShieldCheck, ChefHat, Utensils, Banknote, Smartphone, ArrowRight,
 } from 'lucide-react'
 
 const MODULES = [
@@ -18,43 +18,49 @@ const MODULES = [
   { icon: Smartphone, title: 'App Móvil (PWA)', text: 'Se instala como app nativa en tablets y teléfonos, Android e iOS, sin tiendas.' },
 ]
 
+const FLOW = ['Venta en POS', 'Inventario e insumos', 'Caja', 'DTE al MH', 'Ticket térmico']
+
 export default function Modules() {
   return (
     <section id="modulos" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
-        <div className="text-center mb-14">
-          <p className="eyebrow mb-3">Módulos del sistema</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Todo lo que necesitas, en un solo lugar</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <div className="section-head">
+          <h2>Todo lo que necesitas, en un solo lugar</h2>
+          <p>
             Módulos especializados que trabajan de forma integrada. Contrata solo lo
             que necesitas o el paquete completo.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 border-t border-gray-200 dark:border-gray-800">
           {MODULES.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="card p-6">
-              <div className="w-11 h-11 rounded-lg bg-accent-50 dark:bg-accent-900 flex items-center justify-center mb-4">
-                <Icon className="w-6 h-6 text-accent-700 dark:text-accent-300" />
+            <li key={title} className="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-800">
+              <Icon className="w-5 h-5 mt-1 flex-shrink-0 text-accent-700 dark:text-accent-300" aria-hidden="true" />
+              <div>
+                <h3 className="font-bold mb-1.5">{title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{text}</p>
               </div>
-              <h3 className="text-lg font-bold mb-2">{title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{text}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div className="mt-12 max-w-4xl mx-auto p-8 rounded-2xl bg-primary text-white flex gap-4 items-start">
-          <Zap className="w-8 h-8 text-mint flex-shrink-0" />
-          <div>
-            <h3 className="text-xl font-bold mb-2 text-white">Integración nativa POS → Inventario → DTE</h3>
-            <p className="text-gray-200 leading-relaxed">
-              Cuando tu cajero cierra una venta, el sistema descuenta inventario
-              (incluidos los insumos vía recetas), registra la transacción en caja,
-              genera y transmite el DTE al MH, e imprime el ticket térmico. Todo en
-              un solo paso: nadie vuelve a teclear la venta en otro programa, y el
-              inventario, la caja y Hacienda quedan cuadrados con el mismo dato.
-            </p>
-          </div>
+        <div className="mt-16 md:mt-20 p-8 md:p-12 rounded-2xl bg-primary text-white">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 !text-white">Integración nativa POS → Inventario → DTE</h3>
+          <p className="text-primary-100 leading-relaxed max-w-3xl">
+            Cuando tu cajero cierra una venta, el sistema descuenta inventario
+            (incluidos los insumos vía recetas), registra la transacción en caja,
+            genera y transmite el DTE al MH, e imprime el ticket térmico. Todo en
+            un solo paso: nadie vuelve a teclear la venta en otro programa, y el
+            inventario, la caja y Hacienda quedan cuadrados con el mismo dato.
+          </p>
+          <ol className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-3 text-sm font-semibold" aria-label="Lo que ocurre al cerrar una venta">
+            {FLOW.map((step, i) => (
+              <li key={step} className="flex items-center gap-2">
+                <span className={`px-3.5 py-2 rounded-full ${i === 0 ? 'bg-mint text-primary-900' : 'bg-white/10 text-white'}`}>{step}</span>
+                {i < FLOW.length - 1 && <ArrowRight className="w-4 h-4 text-mint" aria-hidden="true" />}
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>

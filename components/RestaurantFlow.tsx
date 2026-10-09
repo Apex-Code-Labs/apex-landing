@@ -23,28 +23,26 @@ export default function RestaurantFlow() {
   return (
     <section id="restaurantes" className="section-padding bg-white dark:bg-gray-950">
       <div className="container-custom">
-        <div className="text-center mb-14">
-          <p className="eyebrow mb-3">Solución para restaurantes y cafés</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            De la mesa a Hacienda, sin fricción
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <div className="section-head">
+          <h2>De la mesa a Hacienda, sin fricción</h2>
+          <p>
             POS especializado con comandas, mesas, cocina y recetas — validado en
             producción con clientes reales.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+        <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 mb-16 md:mb-20">
           {STEPS.map(({ n, title, text }) => (
-            <div key={n} className="card p-6 relative">
-              <span className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center tabular-nums">
-                {n}
+            <li key={n} className="relative pt-6 pb-8 border-t-2 border-gray-200 dark:border-gray-800">
+              <span className="absolute -top-0.5 left-0 w-12 h-0.5 bg-accent-600" aria-hidden="true" />
+              <span className="block text-sm font-bold text-accent-700 dark:text-accent-300 tabular-nums mb-3">
+                Paso {n}
               </span>
-              <h3 className="text-lg font-bold mb-2 mt-3">{title}</h3>
+              <h3 className="text-lg font-bold mb-2">{title}</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{text}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden order-2 lg:order-1">

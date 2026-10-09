@@ -11,43 +11,39 @@ export default function ProblemSolution() {
   return (
     <section className="section-padding bg-white dark:bg-gray-950">
       <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <p className="eyebrow mb-3">El problema</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 mb-20 md:mb-28">
+          <h2 className="lg:col-span-7 text-3xl md:text-5xl md:leading-[1.1] font-bold">
             ¿Todavía controlas tu negocio con Excel, cuadernos y WhatsApp?
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            Eso significa errores frecuentes, horas perdidas en procesos manuales,
-            cero visibilidad del negocio en tiempo real — y un riesgo real de multas.
-          </p>
+          <div className="lg:col-span-5 space-y-6 text-lg leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300">
+              Eso significa errores frecuentes, horas perdidas en procesos manuales,
+              cero visibilidad del negocio en tiempo real — y un riesgo real de multas.
+            </p>
+            <p className="text-gray-600 dark:text-gray-300">
+              Desde 2023, el Ministerio de Hacienda exige la facturación
+              electrónica (DTE) de forma progresiva en El Salvador.{' '}
+              <strong className="font-semibold text-primary dark:text-white">
+                Con Apex ERP, cumplir no tiene que ser complicado ni caro.
+              </strong>
+            </p>
+          </div>
         </div>
 
-        <div className="max-w-2xl mx-auto mb-16 border-l-2 border-primary-200 dark:border-primary-500 pl-6 py-1 text-left">
-          <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-            Desde 2023, el Ministerio de Hacienda exige la facturación
-            electrónica (DTE) de forma progresiva en El Salvador.{' '}
-            <span className="font-semibold text-primary dark:text-white">
-              Con Apex ERP, cumplir no tiene que ser complicado ni caro.
-            </span>
-          </p>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">Un solo sistema para todo tu negocio</h2>
 
-        <div className="text-center mb-10">
-          <p className="eyebrow mb-3">La solución</p>
-          <h2 className="text-3xl md:text-4xl font-bold">Un solo sistema para todo tu negocio</h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-4 border-t border-gray-200 dark:border-gray-800">
           {AUDIENCES.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="card p-6">
-              <div className="w-11 h-11 rounded-lg bg-primary-50 dark:bg-primary-800 flex items-center justify-center mb-4">
-                <Icon className="w-6 h-6 text-primary dark:text-accent" />
-              </div>
+            <li
+              key={title}
+              className="py-6 sm:pr-8 lg:border-l lg:first:border-l-0 lg:pl-6 lg:first:pl-0 border-b lg:border-b-0 border-gray-200 dark:border-gray-800"
+            >
+              <Icon className="w-6 h-6 text-accent-700 dark:text-accent-300 mb-4" aria-hidden="true" />
               <h3 className="text-lg font-bold mb-2">{title}</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{text}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )
