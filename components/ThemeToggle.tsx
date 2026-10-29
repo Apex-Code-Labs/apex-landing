@@ -1,15 +1,15 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import { useTheme } from 'next-themes'
 import { Sun, Moon } from 'lucide-react'
 
 export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
 
-  // Evita hydration mismatch: el tema real solo se conoce en el cliente.
-  useEffect(() => setMounted(true), [])
+  // Evita hydration mismatch: el tema real solo se conoce en el cliente
+  // (false en el server y en la hidratación, true después).
+  const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false)
   if (!mounted) return <span className="inline-block w-9 h-9" aria-hidden="true" />
 
   const isDark = resolvedTheme === 'dark'
@@ -24,3 +24,5 @@ export default function ThemeToggle() {
     </button>
   )
 }
+
+const noopSubscribe = () => () => {}
