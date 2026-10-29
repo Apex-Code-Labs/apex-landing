@@ -2,7 +2,7 @@ export const FAQS = [
   {
     question: '¿Qué es la facturación electrónica (DTE) y estoy obligado a usarla?',
     answer:
-      'Desde 2023, el Ministerio de Hacienda de El Salvador exige la facturación electrónica (Documentos Tributarios Electrónicos) de forma progresiva para los contribuyentes. Apex ERP genera, firma y transmite tus DTEs directamente al MH, de forma automática al cerrar cada venta.',
+      'Desde 2023, el Ministerio de Hacienda de El Salvador exige la facturación electrónica (Documentos Tributarios Electrónicos) de forma progresiva para los contribuyentes. Apex genera, firma y transmite tus DTEs directamente al MH, de forma automática al cerrar cada venta.',
   },
   {
     question: '¿Cuánto tarda la activación?',
@@ -12,12 +12,12 @@ export const FAQS = [
   {
     question: '¿Pueden migrar los datos de mi sistema anterior?',
     answer:
-      'Sí. Ofrecemos migración de datos desde tu sistema anterior como servicio adicional ($56.50, pago único): productos, clientes e inventario quedan listos en tu cuenta.',
+      'Sí. Si quieres conservar el historial de tu sistema anterior, lo vemos al cotizar: revisamos qué datos traes y te decimos si aplica la migración.',
   },
   {
     question: '¿Cómo obtengo el certificado digital del Ministerio de Hacienda?',
     answer:
-      'El certificado digital para firmar DTEs se gestiona directamente con el MH. Si lo prefieres, te asistimos en todo el trámite como servicio adicional ($33.90, pago único).',
+      'El certificado digital para firmar DTEs se gestiona con el MH. Si prefieres que te acompañemos en el trámite, lo vemos al cotizar.',
   },
   {
     question: '¿Qué pasa con mis datos si cancelo?',

@@ -24,6 +24,8 @@ export interface Vertical {
   name: string
   scope: string
   text: string
+  price: string
+  href?: string
 }
 
 export const PRICING_GROUPS: PlanGroup[] = [
@@ -64,13 +66,18 @@ export const PRICING_GROUPS: PlanGroup[] = [
 ]
 
 export const VERTICALES: Vertical[] = [
-  { icon: UtensilsCrossed, name: 'Restaurante', scope: 'Sobre cualquier plan ERP', text: 'Comandas con mesas, áreas y cocina. Recetas que descuentan insumos.' },
-  { icon: Pill, name: 'Farmacia', scope: 'Sobre cualquier plan ERP', text: 'Lotes con fecha de vencimiento y alertas, venta por caja, blíster o unidad, y compras cargadas desde el DTE de la droguería.' },
-  { icon: BedDouble, name: 'Turismo', scope: 'Sobre cualquier plan ERP', text: 'Habitaciones y Day Pass desde el POS, con la contribución de turismo separada en el DTE.' },
-  { icon: Dumbbell, name: 'Gimnasio', scope: 'Sobre cualquier plan ERP', text: 'Membresías con vencimiento, recordatorios de renovación y control corporal de cada cliente.' },
-  { icon: HardHat, name: 'Proyectos y talleres', scope: 'Sobre Operación o Empresa', text: 'Órdenes de trabajo con el material cargado a cada una, seguimiento por enlace para tu cliente y control de herramientas.' },
-  { icon: Briefcase, name: 'Servicios', scope: 'Sobre cualquier plan Factura', text: 'Cotizaciones que se convierten en factura.' },
+  { icon: UtensilsCrossed, name: 'Restaurante', scope: 'Sobre cualquier plan ERP', text: 'Comandas con mesas, áreas y cocina. Recetas que descuentan insumos.', price: '+$5.63/mes', href: '/restaurantes' },
+  { icon: Pill, name: 'Farmacia', scope: 'Sobre cualquier plan ERP', text: 'Lotes con fecha de vencimiento y alertas, venta por caja, blíster o unidad, y compras cargadas desde el DTE de la droguería.', price: '+$5.63/mes' },
+  { icon: BedDouble, name: 'Turismo', scope: 'Sobre cualquier plan ERP', text: 'Habitaciones y Day Pass desde el POS, con la contribución de turismo separada en el DTE.', price: '+$5.63/mes' },
+  { icon: Dumbbell, name: 'Gimnasio', scope: 'Sobre cualquier plan ERP', text: 'Membresías con vencimiento, recordatorios de renovación y control corporal de cada cliente.', price: '+$5.63/mes' },
+  { icon: HardHat, name: 'Proyectos y talleres', scope: 'Sobre Operación o Empresa', text: 'Órdenes de trabajo con el material cargado a cada una, seguimiento por enlace para tu cliente y control de herramientas.', price: '+$56.48/mes' },
+  { icon: Briefcase, name: 'Servicios', scope: 'Sobre cualquier plan Factura', text: 'Cotizaciones que se convierten en factura.', price: '+$4.50/mes' },
 ]
+
+export const ENTRY_PRICE = PRICING_GROUPS[0].plans[0].monthly
+
+// Comercio + Restaurante según el brochure 2026-10; el IVA va sobre el total, no se suma
+export const RESTAURANT_FROM = '$28.22'
 
 export const ADDONS_NOTE = 'Usuario o bodega adicional $3.39/mes · sucursal adicional $5.65/mes · paquetes de DTE adicionales.'
 
