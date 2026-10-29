@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Check } from 'lucide-react'
-import { PRICING_GROUPS, EARLY_ADOPTER_NOTE } from '@/lib/pricing'
+import { PRICING_GROUPS, VERTICALES, ADDONS_NOTE, CUSTOM_PLAN_FROM } from '@/lib/pricing'
 import { getSignupHref, getSignupLabel } from '@/lib/cta'
 
 export default function Pricing() {
@@ -13,15 +13,13 @@ export default function Pricing() {
   return (
     <section id="precios" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-[2.75rem] md:leading-[1.1] font-bold mb-4">Elige el plan para tu negocio</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Todos los precios incluyen IVA (13%). Sin permanencia forzada.
+        <div className="section-head">
+          <h2>Elige el plan para tu negocio</h2>
+          <p>
+            Apex Factura si solo necesitas cumplir con Hacienda; Apex ERP si quieres
+            operar el negocio completo. Precios con IVA (13%) incluido, sin
+            permanencia forzada.
           </p>
-        </div>
-
-        <div className="mb-6 max-w-2xl mx-auto p-4 rounded-xl bg-accent-50 dark:bg-accent-900 text-accent-800 dark:text-accent-100 text-center text-sm font-semibold">
-          {EARLY_ADOPTER_NOTE}
         </div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -59,7 +57,7 @@ export default function Pricing() {
           </span>
         </div>
 
-        <div className={`grid gap-6 max-w-6xl mx-auto ${group.plans.length === 4 ? 'sm:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
+        <div className={`grid gap-6 mx-auto ${group.plans.length === 2 ? 'md:grid-cols-2 max-w-3xl' : 'md:grid-cols-3 max-w-6xl'}`}>
           {group.plans.map((plan) => (
             <div
               key={plan.name}
@@ -97,12 +95,45 @@ export default function Pricing() {
         </div>
 
         <p className="text-center mt-10 text-sm text-gray-500">
-          ¿Necesitas más detalle?{' '}
-          <a href="/ERP-Brochure-Comercial-v6.1.pdf" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-accent-300 font-semibold underline">
-            Descarga el brochure completo (PDF)
-          </a>{' '}
-          con add-ons y condiciones.
+          ¿Más de 10,000 DTE, integraciones o más de 20 usuarios?{' '}
+          <a href="#contacto" className="text-primary dark:text-accent-300 font-semibold underline underline-offset-4">
+            Plan a la medida desde {CUSTOM_PLAN_FROM}/mes
+          </a>
         </p>
+        <p className="text-center mt-2 text-sm text-gray-500">Add-ons: {ADDONS_NOTE}</p>
+        <p className="text-center mt-2 text-sm">
+          <a href="/Apex-Brochure-2026-10.pdf" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-accent-300 font-semibold underline underline-offset-4">
+            Descarga el brochure completo (PDF)
+          </a>
+        </p>
+
+        <div className="mt-20 md:mt-24">
+          <div className="section-head">
+            <h2>Verticales para tu tipo de negocio</h2>
+            <p>
+              Un paquete que se suma a tu plan con lo que tu rubro necesita. Su precio
+              depende de los módulos que elijas: te lo cotizamos.
+            </p>
+          </div>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 border-t border-gray-200 dark:border-gray-800">
+            {VERTICALES.map(({ icon: Icon, name, scope, text }) => (
+              <li key={name} className="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-800">
+                <Icon className="w-5 h-5 mt-1 flex-shrink-0 text-accent-700 dark:text-accent-300" aria-hidden="true" />
+                <div>
+                  <h3 className="font-bold">{name}</h3>
+                  <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">{scope}</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{text}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-sm text-gray-600 dark:text-gray-300">
+            ¿Tu rubro no aparece?{' '}
+            <a href="#contacto" className="text-primary dark:text-accent-300 font-semibold underline underline-offset-4">
+              Cuéntanos qué necesitas
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )

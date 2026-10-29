@@ -48,8 +48,8 @@ export function generateSoftwareApplicationSchema() {
       '@type': 'AggregateOffer',
       priceCurrency: 'USD',
       lowPrice: '5.63',
-      highPrice: '56.48',
-      offerCount: 10,
+      highPrice: '45.18',
+      offerCount: 5,
     },
     provider: { '@type': 'Organization', name: 'Apex Code Labs', url: 'https://apexcodelabs.com' },
   }
