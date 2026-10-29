@@ -37,6 +37,6 @@ export const FAQS = [
   {
     question: '¿Los precios incluyen IVA?',
     answer:
-      'Sí, todos los precios publicados ya incluyen el IVA (13%). Además, si pagas anual obtienes un 20% de descuento — equivale a pagar 10 meses en lugar de 12, con precio fijo garantizado todo el año.',
+      'Sí, todos los precios publicados ya incluyen el IVA (13%). Además, si pagas anual obtienes un 20% de descuento — equivale a pagar 9.6 meses en lugar de 12, con precio fijo garantizado todo el año.',
   },
 ]
