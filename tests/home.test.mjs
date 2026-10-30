@@ -50,10 +50,13 @@ test('hero fijado', () => {
 test('ejemplo de mensualidad', () => {
   const g = read('components/GrowthExample.tsx')
   for (const t of ['$5.63', '$4.99', '$10.62', 'Ejemplo ilustrativo.']) assert.ok(g.includes(t), t)
+  // Spec «dos lectores»: no se describe el cobro del desarrollo más allá de la frase aprobada.
+  assert.ok(g.includes('se suma a tu mensualidad'))
+  assert.ok(!/no pag/i.test(g), 'GrowthExample no habla de lo que no se pagó')
 })
 
 test('verticales con precio', () => {
   const p = read('components/Pricing.tsx')
-  for (const t of ['price', 'href', 'desde', 'sobre tu plan']) assert.ok(p.includes(t), t)
+  for (const t of ['desde {price}', 'href={href}', 'sobre tu plan']) assert.ok(p.includes(t), t)
   assert.ok(!p.includes('te lo cotizamos'))
 })

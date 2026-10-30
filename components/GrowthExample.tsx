@@ -1,7 +1,7 @@
 // ponytail: cifras ilustrativas escritas completas a propósito (spec): no se calculan sumando precios con IVA.
 const ROWS = [
   { when: 'Mes 1', text: 'Arrancas con el plan Esencial de Apex Factura y facturas desde el primer día.', amount: '$5.63' },
-  { when: 'Mes 2', text: 'El módulo que pediste está listo y lo empiezas a usar. Hasta ese día no pagaste nada por desarrollarlo.', amount: '+ $4.99' },
+  { when: 'Mes 2', text: 'El módulo que pediste está listo y empiezas a usarlo: se suma a tu mensualidad.', amount: '+ $4.99' },
   { when: 'Desde ahí', text: 'Una sola mensualidad, con todo incluido.', amount: '$10.62' },
 ]
 
