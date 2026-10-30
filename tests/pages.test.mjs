@@ -12,3 +12,19 @@ test('página /restaurantes', () => {
   for (const t of ['RESTAURANT_FROM', 'WA_MESSAGE_RESTAURANT', '<RestaurantFlow']) assert.ok(p.includes(t), t)
   for (const t of ['comandas', 'mesas', 'KDS', 'recetas', 'corte Z']) assert.ok(p.includes(t), t)
 })
+
+test('página /desarrollo', () => {
+  const p = read('app/desarrollo/page.tsx')
+  const low = p.toLowerCase()
+  assert.ok(p.includes('export const metadata'))
+  for (const t of [
+    'Construimos el sistema que tu empresa va a vender o a usar, con la tecnología que elijas.',
+    'Cuéntanos tu proyecto', 'WA_MESSAGE_DEV', 'Lo que construimos', 'Cómo trabajamos',
+    'const CASES', 'CASES.length > 0 &&',
+  ]) assert.ok(p.includes(t), t)
+  for (const t of [
+    'conocemos la operación hablando con quien hace el trabajo',
+    'propuesta escrita con alcance, etapas, tiempos y precio',
+    'entregamos por etapas y se usa lo construido antes de seguir',
+  ]) assert.ok(low.includes(t), t)
+})
