@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Logo from './Logo'
 import { CONTACT_EMAIL, waLink } from '@/lib/contact'
 
@@ -11,16 +12,15 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="mb-5"><Logo variant="dark" /></div>
             <p className="text-gray-300 leading-relaxed max-w-md">
-              Apex ERP: la plataforma salvadoreña que integra POS, inventario,
-              comandas y facturación electrónica DTE con transmisión directa al
-              Ministerio de Hacienda.
+              Apex Code Labs: facturación electrónica, Apex ERP y desarrollo a la
+              medida para empresas en El Salvador.
             </p>
             <div className="mt-6">
               <a
                 href="https://linkedin.com/company/apex-code-labs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex text-gray-300 hover:text-mint transition-colors"
+                className="inline-flex p-2.5 -m-2.5 text-gray-300 hover:text-mint transition-colors"
                 aria-label="LinkedIn de Apex Code Labs"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -33,10 +33,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Producto</h3>
             <ul className="space-y-2">
-              <li><a href="#modulos" className="text-gray-300 hover:text-mint font-medium transition-colors">Módulos</a></li>
-              <li><a href="#facturacion" className="text-gray-300 hover:text-mint font-medium transition-colors">Facturación DTE</a></li>
-              <li><a href="#restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Restaurantes y cafés</a></li>
-              <li><a href="#precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</a></li>
+              <li><Link href="/#facturacion" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Factura</Link></li>
+              <li><Link href="/#modulos" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex ERP</Link></li>
+              <li><Link href="/restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Restaurante</Link></li>
+              <li><Link href="/desarrollo" className="text-gray-300 hover:text-mint font-medium transition-colors">Desarrollo a la medida</Link></li>
+              <li><Link href="/#precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</Link></li>
             </ul>
           </div>
 

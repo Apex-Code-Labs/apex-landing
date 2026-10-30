@@ -1,42 +1,46 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
-import { getSignupHref, getSignupLabel } from '@/lib/cta'
+import { waLink, waMessageFor } from '@/lib/contact'
 
+// Rutas absolutas: el Header también se monta en /restaurantes y /desarrollo.
 const NAV = [
-  { href: '#modulos', label: 'Módulos' },
-  { href: '#facturacion', label: 'Facturación DTE' },
-  { href: '#restaurantes', label: 'Restaurantes' },
-  { href: '#precios', label: 'Precios' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#facturacion', label: 'Factura' },
+  { href: '/#modulos', label: 'ERP' },
+  { href: '/restaurantes', label: 'Restaurante' },
+  { href: '/desarrollo', label: 'Desarrollo' },
+  { href: '/#precios', label: 'Precios' },
 ]
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-night-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-night-800">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" aria-label="Apex Code Labs — inicio">
+          <Link href="/" aria-label="Apex Code Labs — inicio">
             <Logo />
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             {NAV.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors font-medium"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <ThemeToggle />
-            <a href={getSignupHref()} className="btn-primary !py-2.5">
-              {getSignupLabel()}
+            <a href={waLink(waMessageFor(pathname))} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5">
+              Escríbenos por WhatsApp
             </a>
           </nav>
 
@@ -44,7 +48,7 @@ export default function Header() {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="p-2.5 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -57,20 +61,20 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800" id="mobile-menu">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-night-800" id="mobile-menu">
             <div className="flex flex-col space-y-4">
               {NAV.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   className="text-left text-gray-700 dark:text-gray-300 hover:text-primary transition-colors font-medium"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <a href={getSignupHref()} onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
-                {getSignupLabel()}
+              <a href={waLink(waMessageFor(pathname))} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
+                Escríbenos por WhatsApp
               </a>
             </div>
           </div>

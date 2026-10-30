@@ -21,7 +21,7 @@ const FEATURES = [
 
 export default function RestaurantFlow() {
   return (
-    <section id="restaurantes" className="section-padding bg-white dark:bg-gray-950">
+    <section className="section-padding bg-white dark:bg-night-950">
       <div className="container-custom">
         <div className="section-head">
           <h2>De la mesa a Hacienda, sin fricción</h2>
@@ -33,7 +33,7 @@ export default function RestaurantFlow() {
 
         <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 mb-16 md:mb-20">
           {STEPS.map(({ n, title, text }) => (
-            <li key={n} className="relative pt-6 pb-8 border-t-2 border-gray-200 dark:border-gray-800">
+            <li key={n} className="relative pt-6 pb-8 border-t-2 border-gray-200 dark:border-night-800">
               <span className="absolute -top-0.5 left-0 w-12 h-0.5 bg-accent-600" aria-hidden="true" />
               <span className="block text-sm font-bold text-accent-700 dark:text-accent-300 tabular-nums mb-3">
                 Paso {n}
@@ -45,7 +45,7 @@ export default function RestaurantFlow() {
         </ol>
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xl overflow-hidden order-2 lg:order-1">
+          <div className="rounded-2xl border border-gray-200 dark:border-night-800 shadow-xl overflow-hidden order-2 lg:order-1">
             <ThemeImage
               srcLight={comandasLight}
               srcDark={comandasDark}

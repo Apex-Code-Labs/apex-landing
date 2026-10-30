@@ -44,6 +44,14 @@ const config: Config = {
           700: '#5FCB80',
         },
         navy: '#0A0F3D',
+        // Modo oscuro: escala derivada del navy de marca (mismo tono), para no mezclar grises con navy.
+        night: {
+          600: '#2F3770',
+          700: '#1F2659',
+          800: '#141A44',
+          900: '#0B1033',
+          950: '#06081F',
+        },
       },
       fontFamily: {
         sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'],

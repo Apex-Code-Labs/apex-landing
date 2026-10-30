@@ -7,7 +7,7 @@ export function generateOrganizationSchema() {
     "name": "Apex Code Labs",
     "url": "https://apexcodelabs.com",
     "logo": "https://apexcodelabs.com/brand/isotipo.svg",
-    "description": "Apex Code Labs desarrolla Apex ERP, el sistema de gestión con punto de venta, inventario, comandas y facturación electrónica DTE integrada con el Ministerio de Hacienda de El Salvador.",
+    "description": "Apex Code Labs ofrece Apex Factura (facturación electrónica DTE con el Ministerio de Hacienda de El Salvador), Apex ERP con punto de venta e inventario, y desarrollo de software a la medida para empresas.",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "SV"
@@ -30,7 +30,7 @@ export function generateWebSiteSchema() {
     "@type": "WebSite",
     "name": "Apex Code Labs",
     "url": "https://apexcodelabs.com",
-    "description": "Apex ERP: ventas, POS, inventario, comandas y facturación electrónica DTE en una sola plataforma para negocios en El Salvador.",
+    "description": "Facturación electrónica con Apex Factura, Apex ERP para cuando tu negocio crece y desarrollo a la medida para empresas en El Salvador.",
     "inLanguage": "es-SV"
   }
 }

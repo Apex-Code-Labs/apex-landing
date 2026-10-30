@@ -1,11 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { X } from 'lucide-react'
-import { waLink } from '@/lib/contact'
+import { waLink, waMessageFor } from '@/lib/contact'
 
 export default function WhatsAppFloat() {
   const [isVisible, setIsVisible] = useState(true)
+  const pathname = usePathname()
 
   if (!isVisible) return null
 
@@ -13,14 +15,14 @@ export default function WhatsAppFloat() {
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
       <button
         onClick={() => setIsVisible(false)}
-        className="absolute -top-1.5 -right-1.5 w-6 h-6 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:text-gray-900 dark:hover:text-white rounded-full flex items-center justify-center shadow-sm transition-colors z-10"
+        className="absolute -top-1.5 -right-1.5 w-6 h-6 after:absolute after:-inset-2.5 bg-white dark:bg-night-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-night-700 hover:text-gray-900 dark:hover:text-white rounded-full flex items-center justify-center shadow-sm transition-colors z-10"
         aria-label="Ocultar botón de WhatsApp"
       >
         <X className="w-3.5 h-3.5" aria-hidden="true" />
       </button>
 
       <a
-        href={waLink()}
+        href={waLink(waMessageFor(pathname))}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5b] text-white rounded-full shadow-[0_6px_20px_-4px_rgba(0,0,0,0.3)] transition-colors"

@@ -124,3 +124,5 @@ temp/
 
 # Impeccable: preferencias locales por persona (design.json y config.json sí se versionan)
 .impeccable/config.local.json
+
+.superpowers/

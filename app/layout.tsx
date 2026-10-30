@@ -8,6 +8,7 @@ import {
   generateFAQSchema,
 } from '@/lib/schema'
 import Providers from '@/components/Providers'
+import { ENTRY_PRICE } from '@/lib/pricing'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -16,13 +17,15 @@ const poppins = Poppins({
   display: 'swap',
 })
 
+const TITLE = 'Apex Code Labs — Facturación electrónica, Apex ERP y desarrollo a la medida en El Salvador'
+const DESCRIPTION = `Factura electrónica con Apex Factura desde ${ENTRY_PRICE}/mes con IVA incluido: tus DTEs van directo al Ministerio de Hacienda. Cuando tu negocio crece, sumas Apex ERP con punto de venta e inventario. Y si necesitas algo a tu medida, lo desarrollamos.`
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://apexcodelabs.com'),
-  title: 'Apex ERP — Sistema ERP con Facturación Electrónica y POS en El Salvador',
-  description:
-    'Gestiona tu negocio completo desde una sola plataforma: ventas, POS, inventario, comandas, recetas, multi-sucursal y facturación electrónica DTE con transmisión directa al Ministerio de Hacienda. Desde $5.63/mes con IVA incluido.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords:
-    'facturación electrónica El Salvador, DTE, sistema ERP, punto de venta, POS restaurante, Ministerio de Hacienda, inventario, comandas, El Salvador',
+    'facturación electrónica El Salvador, DTE, Apex Factura, Apex ERP, punto de venta, inventario, Ministerio de Hacienda, desarrollo de software para empresas, El Salvador',
   authors: [{ name: 'Apex Code Labs' }],
   creator: 'Apex Code Labs',
   publisher: 'Apex Code Labs',
@@ -32,16 +35,14 @@ export const metadata: Metadata = {
     locale: 'es_SV',
     url: 'https://apexcodelabs.com',
     siteName: 'Apex Code Labs',
-    title: 'Apex ERP — Sistema ERP con Facturación Electrónica y POS en El Salvador',
-    description:
-      'Ventas, POS, inventario, comandas y facturación electrónica DTE transmitida directamente al Ministerio de Hacienda. Desde $5.63/mes.',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Apex Code Labs — Apex ERP' }],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Apex Code Labs' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Apex ERP — ERP con Facturación Electrónica y POS en El Salvador',
-    description:
-      'Ventas, POS, inventario, comandas y DTE transmitido directamente al Ministerio de Hacienda. Desde $5.63/mes.',
+    title: TITLE,
+    description: DESCRIPTION,
     images: ['/og.png'],
   },
   alternates: { canonical: 'https://apexcodelabs.com' },

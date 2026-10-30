@@ -86,7 +86,7 @@ docs/
 | `RESEND_API_KEY` | Envío del formulario (obligatoria en producción) |
 | `CONTACT_TO_EMAIL` / `CONTACT_FROM_EMAIL` | Destinatario / remitente |
 | `N8N_WEBHOOK_URL` | Webhook opcional post-envío |
-| `NEXT_PUBLIC_WA_NUMBER` / `NEXT_PUBLIC_WA_MSG` | WhatsApp (hay defaults reales) |
+| `NEXT_PUBLIC_WA_NUMBER` | Número de WhatsApp (hay default real) |
 | `NEXT_PUBLIC_SIGNUP_URL` | Registro self-service (cuando exista) |
 | `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Analytics opcional |
 

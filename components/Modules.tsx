@@ -22,19 +22,20 @@ const FLOW = ['Venta en POS', 'Inventario e insumos', 'Caja', 'DTE al MH', 'Tick
 
 export default function Modules() {
   return (
-    <section id="modulos" className="section-padding bg-gray-50 dark:bg-gray-900">
+    <section id="modulos" className="section-padding bg-gray-50 dark:bg-night-950">
       <div className="container-custom">
         <div className="section-head">
-          <h2>Todo lo que necesitas, en un solo lugar</h2>
+          <h2>Apex ERP: el paso siguiente cuando tu negocio crece</h2>
           <p>
-            Módulos especializados que trabajan de forma integrada. Contrata solo lo
-            que necesitas o el paquete completo.
+            Empiezas facturando y, cuando tu negocio crece, sumas inventario, caja y
+            comandas sin cambiar de sistema. Contrata solo lo que necesitas o el
+            paquete completo.
           </p>
         </div>
 
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 border-t border-gray-200 dark:border-gray-800">
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 border-t border-gray-200 dark:border-night-800">
           {MODULES.map(({ icon: Icon, title, text }) => (
-            <li key={title} className="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-800">
+            <li key={title} className="flex gap-4 py-6 border-b border-gray-200 dark:border-night-800">
               <Icon className="w-5 h-5 mt-1 flex-shrink-0 text-accent-700 dark:text-accent-300" aria-hidden="true" />
               <div>
                 <h3 className="font-bold mb-1.5">{title}</h3>
@@ -44,20 +45,22 @@ export default function Modules() {
           ))}
         </ul>
 
-        <div className="mt-16 md:mt-20 p-8 md:p-12 rounded-2xl bg-primary text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 !text-white">Integración nativa POS → Inventario → DTE</h3>
-          <p className="text-primary-100 leading-relaxed max-w-3xl">
-            Cuando tu cajero cierra una venta, el sistema descuenta inventario
-            (incluidos los insumos vía recetas), registra la transacción en caja,
-            genera y transmite el DTE al MH, e imprime el ticket térmico. Todo en
-            un solo paso: nadie vuelve a teclear la venta en otro programa, y el
-            inventario, la caja y Hacienda quedan cuadrados con el mismo dato.
-          </p>
-          <ol className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-3 text-sm font-semibold" aria-label="Lo que ocurre al cerrar una venta">
+        <div className="mt-16 md:mt-20 p-8 md:p-12 rounded-2xl bg-primary dark:bg-night-800 dark:ring-1 dark:ring-accent/30 text-white lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+          <div className="lg:col-span-7">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 !text-white">Integración nativa POS → Inventario → DTE</h3>
+            <p className="text-primary-100 leading-relaxed">
+              Cuando tu cajero cierra una venta, el sistema descuenta inventario
+              (incluidos los insumos vía recetas), registra la transacción en caja,
+              genera y transmite el DTE al MH, e imprime el ticket térmico. Todo en
+              un solo paso: nadie vuelve a teclear la venta en otro programa, y el
+              inventario, la caja y Hacienda quedan cuadrados con el mismo dato.
+            </p>
+          </div>
+          <ol className="mt-8 lg:mt-0 lg:col-span-5 flex flex-wrap justify-center lg:flex-col items-center gap-x-2 gap-y-3 lg:gap-y-1 text-sm font-semibold" aria-label="Lo que ocurre al cerrar una venta">
             {FLOW.map((step, i) => (
-              <li key={step} className="flex items-center gap-2">
+              <li key={step} className="flex lg:flex-col items-center gap-2 lg:gap-1">
+                {i > 0 && <ArrowRight className="w-4 h-4 text-mint lg:rotate-90" aria-hidden="true" />}
                 <span className={`px-3.5 py-2 rounded-full ${i === 0 ? 'bg-mint text-primary-900' : 'bg-white/10 text-white'}`}>{step}</span>
-                {i < FLOW.length - 1 && <ArrowRight className="w-4 h-4 text-mint" aria-hidden="true" />}
               </li>
             ))}
           </ol>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PoliticaPrivacidadPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-night-900">
       {/* Header */}
       <header className="bg-primary text-white py-8">
         <div className="container-custom">
@@ -190,7 +190,7 @@ export default function PoliticaPrivacidadPage() {
                 Si tienes preguntas sobre esta política de privacidad o quieres ejercer tus derechos, 
                 puedes contactarnos:
               </p>
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <div className="bg-gray-50 dark:bg-night-800 p-6 rounded-lg">
                 <p className="text-gray-600 dark:text-gray-300 mb-2">
                   <strong>Apex Code Labs</strong>
                 </p>
