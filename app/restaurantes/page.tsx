@@ -57,18 +57,16 @@ export default function Restaurantes() {
           <p className="mt-6 max-w-3xl mx-auto text-pretty text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
             Es Apex ERP con el paquete Restaurante: comandas, mesas, cocina, recetas, caja y facturación electrónica trabajando juntas.
           </p>
-          <p className="mt-8 text-xl font-bold text-primary dark:text-white">
-            Desde {RESTAURANT_FROM}/mes <span className="text-sm font-normal text-gray-600 dark:text-gray-400">IVA incluido, sin permanencia</span>
-          </p>
           <a
             href={waLink(WA_MESSAGE_RESTAURANT)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 btn-primary text-lg px-7 py-4 inline-flex items-center justify-center gap-2"
+            className="btn-primary mt-10 inline-flex items-center gap-2"
           >
-            <MessageCircle className="w-5 h-5" aria-hidden="true" />
-            Escríbenos por WhatsApp
+            <MessageCircle className="w-4 h-4" aria-hidden="true" />
+            <span>Escríbenos<span className="hidden sm:inline"> por WhatsApp</span> · <span className="whitespace-nowrap">desde {RESTAURANT_FROM}/mes</span></span>
           </a>
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">IVA incluido, sin permanencia</p>
 
           <div className="mt-14 md:mt-16 -mb-px rounded-t-2xl border border-b-0 border-primary-200 dark:border-night-700 shadow-[0_-12px_48px_-12px_rgba(18,28,140,0.18)] dark:shadow-none overflow-hidden lg:mx-12">
             <Image
