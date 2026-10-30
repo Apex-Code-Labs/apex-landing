@@ -21,7 +21,7 @@ const FEATURES = [
 
 export default function RestaurantFlow() {
   return (
-    <section id="restaurantes" className="section-padding bg-white dark:bg-gray-950">
+    <section className="section-padding bg-white dark:bg-gray-950">
       <div className="container-custom">
         <div className="section-head">
           <h2>De la mesa a Hacienda, sin fricción</h2>
