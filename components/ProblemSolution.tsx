@@ -47,9 +47,9 @@ export default function ProblemSolution() {
           </div>
         </div>
 
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Elige por dónde empezar</h2>
+        <p id="caminos" className="text-2xl md:text-3xl font-bold mb-8 text-center text-primary dark:text-white">Elige por dónde empezar</p>
 
-        <ul className="grid md:grid-cols-3 gap-6">
+        <ul aria-labelledby="caminos" className="grid md:grid-cols-3 gap-6">
           {PATHS.map(({ icon: Icon, title, text, meta, href, cta }) => (
             <li key={href}>
               <a href={href} className="card group h-full p-6 md:p-8 flex flex-col hover:border-primary dark:hover:border-accent-300">

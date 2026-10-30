@@ -20,7 +20,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/apex-code-labs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex text-gray-300 hover:text-mint transition-colors"
+                className="inline-flex p-2.5 -m-2.5 text-gray-300 hover:text-mint transition-colors"
                 aria-label="LinkedIn de Apex Code Labs"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

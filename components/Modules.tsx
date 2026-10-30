@@ -59,8 +59,8 @@ export default function Modules() {
           <ol className="mt-8 lg:mt-0 lg:col-span-5 flex flex-wrap justify-center lg:flex-col items-center gap-x-2 gap-y-3 lg:gap-y-1 text-sm font-semibold" aria-label="Lo que ocurre al cerrar una venta">
             {FLOW.map((step, i) => (
               <li key={step} className="flex lg:flex-col items-center gap-2 lg:gap-1">
+                {i > 0 && <ArrowRight className="w-4 h-4 text-mint lg:rotate-90" aria-hidden="true" />}
                 <span className={`px-3.5 py-2 rounded-full ${i === 0 ? 'bg-mint text-primary-900' : 'bg-white/10 text-white'}`}>{step}</span>
-                {i < FLOW.length - 1 && <ArrowRight className="w-4 h-4 text-mint lg:rotate-90" aria-hidden="true" />}
               </li>
             ))}
           </ol>

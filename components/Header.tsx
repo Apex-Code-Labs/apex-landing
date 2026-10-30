@@ -11,7 +11,7 @@ import { waLink, waMessageFor } from '@/lib/contact'
 const NAV = [
   { href: '/#facturacion', label: 'Factura' },
   { href: '/#modulos', label: 'ERP' },
-  { href: '/restaurantes', label: 'Restaurantes' },
+  { href: '/restaurantes', label: 'Restaurante' },
   { href: '/desarrollo', label: 'Desarrollo' },
   { href: '/#precios', label: 'Precios' },
 ]
@@ -48,7 +48,7 @@ export default function Header() {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="p-2.5 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"

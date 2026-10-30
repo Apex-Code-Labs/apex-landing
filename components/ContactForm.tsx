@@ -283,7 +283,7 @@ export default function ContactForm() {
                     checked={formData.consent}
                     onChange={handleChange}
                     required
-                    className="mt-1 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary focus:ring-primary border-gray-300 rounded"
                   />
                   <label htmlFor="consent" className="text-sm text-gray-600 dark:text-gray-300">
                     Acepto la{' '}

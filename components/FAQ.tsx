@@ -25,7 +25,7 @@ export default function FAQ() {
                 <h3 className="text-lg font-semibold text-primary dark:text-white">{faq.question}</h3>
                 <ChevronDown className="w-5 h-5 flex-shrink-0 text-gray-500 transition-transform group-open:rotate-180" aria-hidden="true" />
               </summary>
-              <p className="pb-6 pr-9 text-gray-600 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+              <p className="pb-6 pr-9 max-w-[68ch] text-gray-600 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
             </details>
           ))}
         </div>

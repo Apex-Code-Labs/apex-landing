@@ -49,7 +49,7 @@ export default function Pricing() {
             aria-checked={annual}
             aria-label="Cambiar a facturación anual"
             onClick={() => setAnnual(!annual)}
-            className={`relative w-14 h-7 rounded-full transition-colors ${annual ? 'bg-primary' : 'bg-gray-300 dark:bg-night-700'}`}
+            className={`relative w-14 h-7 rounded-full after:absolute after:-inset-2 transition-colors ${annual ? 'bg-primary' : 'bg-gray-300 dark:bg-night-700'}`}
           >
             <span className={`absolute top-1 w-5 h-5 rounded-full bg-white transition-all ${annual ? 'left-8' : 'left-1'}`} />
           </button>
@@ -97,13 +97,13 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
+        <p className="max-w-2xl mx-auto text-pretty text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
           ¿Más de 10,000 DTE, integraciones o más de 20 usuarios?{' '}
           <a href="#contacto" className="text-primary dark:text-accent-300 font-semibold underline underline-offset-4">
             Te armamos un plan a la medida
           </a>
         </p>
-        <p className="text-center mt-2 text-sm text-gray-500 dark:text-gray-400">Add-ons: {ADDONS_NOTE}</p>
+        <p className="max-w-2xl mx-auto text-pretty text-center mt-2 text-sm text-gray-500 dark:text-gray-400">Add-ons: {ADDONS_NOTE}</p>
         <p className="text-center mt-2 text-sm">
           <a href="/Apex-Brochure-2026-10.pdf" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-accent-300 font-semibold underline underline-offset-4">
             Descarga el brochure completo (PDF)
