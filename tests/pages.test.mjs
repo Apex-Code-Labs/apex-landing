@@ -28,3 +28,11 @@ test('página /desarrollo', () => {
     'entregamos por etapas y se usa lo construido antes de seguir',
   ]) assert.ok(low.includes(t), t)
 })
+
+test('SEO de la home', () => {
+  assert.ok(!read('app/layout.tsx').includes('POS restaurante'))
+  // Organization y WebSite van antes de SoftwareApplication en lib/schema.ts
+  const orgAndSite = read('lib/schema.ts').split('SoftwareApplication')[0]
+  assert.ok(!orgAndSite.includes('comandas'), 'comandas en Organization/WebSite')
+  assert.ok(orgAndSite.includes('facturación electrónica'))
+})
