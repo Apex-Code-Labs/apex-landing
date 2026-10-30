@@ -4,6 +4,12 @@ export const WA_MESSAGE_DEV = 'Hola Apex Code Labs, mi empresa necesita un desar
 export const WA_MESSAGE_RESTAURANT = 'Hola Apex Code Labs, quiero información sobre Apex Restaurante.'
 export const CONTACT_EMAIL = 'contacto@apexcodelabs.com'
 
+export function waMessageFor(pathname: string | null): string {
+  if (pathname === '/desarrollo') return WA_MESSAGE_DEV
+  if (pathname === '/restaurantes') return WA_MESSAGE_RESTAURANT
+  return WA_MESSAGE
+}
+
 export function waLink(message = WA_MESSAGE): string {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`
 }

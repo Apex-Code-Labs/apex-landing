@@ -27,6 +27,12 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Apex Restaurante' }],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ['/og.png'],
+  },
 }
 
 const MODULES = [

@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
-import { waLink } from '@/lib/contact'
+import { waLink, waMessageFor } from '@/lib/contact'
 
 // Rutas absolutas: el Header también se monta en /restaurantes y /desarrollo.
 const NAV = [
@@ -17,6 +18,7 @@ const NAV = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-night-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-night-800">
@@ -37,7 +39,7 @@ export default function Header() {
               </Link>
             ))}
             <ThemeToggle />
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5">
+            <a href={waLink(waMessageFor(pathname))} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5">
               Escríbenos por WhatsApp
             </a>
           </nav>
@@ -71,7 +73,7 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <a href={waLink()} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
+              <a href={waLink(waMessageFor(pathname))} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
                 Escríbenos por WhatsApp
               </a>
             </div>

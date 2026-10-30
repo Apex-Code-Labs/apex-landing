@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { VERTICALES, ENTRY_PRICE, RESTAURANT_FROM } from '../lib/pricing.ts'
 import { FAQS } from '../lib/faqs.ts'
-import { waLink, WA_MESSAGE, WA_MESSAGE_DEV } from '../lib/contact.ts'
+import { waLink, waMessageFor, WA_MESSAGE, WA_MESSAGE_DEV, WA_MESSAGE_RESTAURANT } from '../lib/contact.ts'
 
 test('precios de verticales', () => {
   assert.deepEqual(Object.fromEntries(VERTICALES.map((v) => [v.name, v.price])), {
@@ -38,4 +38,10 @@ test('WhatsApp', () => {
   assert.ok(waLink(WA_MESSAGE_DEV).includes(encodeURIComponent(WA_MESSAGE_DEV)))
   assert.ok(!WA_MESSAGE.includes('Apex ERP'))
   assert.ok(!readFileSync('lib/contact.ts', 'utf8').includes('NEXT_PUBLIC_WA_MSG'))
+})
+
+test('mensaje de WhatsApp según la página', () => {
+  assert.equal(waMessageFor('/desarrollo'), WA_MESSAGE_DEV)
+  assert.equal(waMessageFor('/restaurantes'), WA_MESSAGE_RESTAURANT)
+  for (const p of ['/', '/gracias', null]) assert.equal(waMessageFor(p), WA_MESSAGE)
 })

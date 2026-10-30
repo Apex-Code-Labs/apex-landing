@@ -9,7 +9,7 @@ test('página /restaurantes', () => {
   assert.ok(p.includes('export const metadata'))
   const seo = (p.match(/title: '[^']*'/)?.[0] ?? '') + (p.match(/keywords: \[[^\]]*\]/)?.[0] ?? '')
   assert.ok(seo.includes('POS') && seo.toLowerCase().includes('restaurante'), seo)
-  for (const t of ['RESTAURANT_FROM', 'WA_MESSAGE_RESTAURANT', '<RestaurantFlow']) assert.ok(p.includes(t), t)
+  for (const t of ['Desde {RESTAURANT_FROM}/mes', 'waLink(WA_MESSAGE_RESTAURANT)', '<RestaurantFlow']) assert.ok(p.includes(t), t)
   for (const t of ['comandas', 'mesas', 'KDS', 'recetas', 'corte Z']) assert.ok(p.includes(t), t)
 })
 
@@ -40,5 +40,23 @@ test('SEO de la home', () => {
 test('ningún hero lleva label arriba del título', () => {
   for (const f of ['components/Hero.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx']) {
     assert.ok(!read(f).includes('uppercase tracking-[0.08em]'), f)
+  }
+})
+
+test('twitter propio en /restaurantes y /desarrollo', () => {
+  // Sin esto, X hereda el título y la descripción de la home.
+  for (const f of ['app/restaurantes/page.tsx', 'app/desarrollo/page.tsx']) {
+    const p = read(f)
+    for (const t of ["card: 'summary_large_image'", 'title: TITLE', 'description: DESCRIPTION', "images: ['/og.png']"]) {
+      assert.ok(p.includes(`twitter: {`) && p.slice(p.indexOf('twitter: {')).includes(t), `${f}: ${t}`)
+    }
+  }
+})
+
+test('header y burbuja mandan el mensaje de la página', () => {
+  for (const f of ['components/Header.tsx', 'components/WhatsAppFloat.tsx']) {
+    const p = read(f)
+    assert.ok(p.includes('waLink(waMessageFor(pathname))'), f)
+    assert.ok(!p.includes('waLink()'), f)
   }
 })

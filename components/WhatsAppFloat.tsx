@@ -1,11 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { X } from 'lucide-react'
-import { waLink } from '@/lib/contact'
+import { waLink, waMessageFor } from '@/lib/contact'
 
 export default function WhatsAppFloat() {
   const [isVisible, setIsVisible] = useState(true)
+  const pathname = usePathname()
 
   if (!isVisible) return null
 
@@ -20,7 +22,7 @@ export default function WhatsAppFloat() {
       </button>
 
       <a
-        href={waLink()}
+        href={waLink(waMessageFor(pathname))}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5b] text-white rounded-full shadow-[0_6px_20px_-4px_rgba(0,0,0,0.3)] transition-colors"
