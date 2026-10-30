@@ -26,6 +26,7 @@ export default function DteSection() {
           <p className="!text-gray-300">
             Apex Factura cumple todos los requerimientos técnicos y legales vigentes
             del Ministerio de Hacienda de El Salvador para transmitir tus DTEs.
+            Nuestros clientes emiten documentos aceptados por Hacienda desde marzo de 2026.
           </p>
         </div>
 

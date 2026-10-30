@@ -116,7 +116,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="contacto" className="section-padding bg-gray-50 dark:bg-night-950">
       <div className="container-custom">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-28">
@@ -160,7 +160,7 @@ export default function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                       placeholder="Tu nombre completo"
                     />
                   </div>
@@ -176,7 +176,7 @@ export default function ContactForm() {
                       value={formData.company}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
@@ -194,7 +194,7 @@ export default function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                       placeholder="tu@empresa.com"
                     />
                   </div>
@@ -209,7 +209,7 @@ export default function ContactForm() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                       placeholder="+503 1234-5678"
                     />
                   </div>
@@ -226,7 +226,7 @@ export default function ContactForm() {
                       value={formData.country}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                     >
                       <option value="">Selecciona tu país</option>
                       {countries.map((country) => (
@@ -247,7 +247,7 @@ export default function ContactForm() {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                     >
                       <option value="">Selecciona un servicio</option>
                       {services.map((service) => (
@@ -270,7 +270,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:text-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-night-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-night-700 dark:text-white"
                     placeholder="Cuéntanos sobre tu proyecto, necesidades específicas y objetivos..."
                   />
                 </div>

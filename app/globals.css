@@ -21,7 +21,7 @@
   }
 
   body {
-    @apply bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300;
+    @apply bg-white dark:bg-night-950 text-gray-700 dark:text-gray-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -51,7 +51,7 @@
   }
 
   .card {
-    @apply bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-gray-800;
+    @apply bg-white dark:bg-night-900 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 dark:border-night-800;
   }
 
   .section-padding {
@@ -66,16 +66,16 @@
     background-image: linear-gradient(135deg, #13C6AB 0%, #96E5AC 100%);
   }
 
-  /* Cabecera de sección: título a la izquierda, bajada a la derecha en desktop. */
+  /* Cabecera de sección: título y bajada apilados y centrados. */
   .section-head {
-    @apply grid gap-4 lg:grid-cols-12 lg:gap-12 items-end mb-12 md:mb-16;
+    @apply max-w-4xl mx-auto text-center mb-12 md:mb-16;
   }
 
   .section-head > h2 {
-    @apply lg:col-span-6 text-3xl md:text-[2.75rem] md:leading-[1.1] font-bold;
+    @apply text-3xl md:text-[2.75rem] leading-tight md:leading-[1.2] font-bold;
   }
 
   .section-head > p {
-    @apply lg:col-span-5 lg:col-start-8 text-lg text-gray-600 dark:text-gray-300 leading-relaxed;
+    @apply mt-4 max-w-3xl mx-auto text-pretty text-lg text-gray-600 dark:text-gray-300 leading-relaxed;
   }
 }

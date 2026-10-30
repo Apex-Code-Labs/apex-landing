@@ -4,7 +4,6 @@ import ProblemSolution from '@/components/ProblemSolution'
 import DteSection from '@/components/DteSection'
 import Modules from '@/components/Modules'
 import Pricing from '@/components/Pricing'
-import DevTeaser from '@/components/DevTeaser'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -19,7 +18,6 @@ export default function Home() {
       <DteSection />
       <Modules />
       <Pricing />
-      <DevTeaser />
       <FAQ />
       <ContactForm />
       <Footer />

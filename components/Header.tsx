@@ -19,7 +19,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-night-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-night-800">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" aria-label="Apex Code Labs — inicio">
@@ -59,7 +59,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800" id="mobile-menu">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-night-800" id="mobile-menu">
             <div className="flex flex-col space-y-4">
               {NAV.map((item) => (
                 <Link

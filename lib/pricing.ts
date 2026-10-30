@@ -81,4 +81,3 @@ export const RESTAURANT_FROM = '$28.22'
 
 export const ADDONS_NOTE = 'Usuario o bodega adicional $3.39/mes · sucursal adicional $5.65/mes · paquetes de DTE adicionales.'
 
-export const CUSTOM_PLAN_FROM = '$45.18'

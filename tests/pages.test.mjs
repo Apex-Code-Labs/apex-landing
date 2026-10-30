@@ -36,3 +36,9 @@ test('SEO de la home', () => {
   assert.ok(!orgAndSite.includes('comandas'), 'comandas en Organization/WebSite')
   assert.ok(orgAndSite.includes('facturación electrónica'))
 })
+
+test('ningún hero lleva label arriba del título', () => {
+  for (const f of ['components/Hero.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx']) {
+    assert.ok(!read(f).includes('uppercase tracking-[0.08em]'), f)
+  }
+})

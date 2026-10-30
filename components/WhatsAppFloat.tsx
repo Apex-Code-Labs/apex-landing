@@ -13,7 +13,7 @@ export default function WhatsAppFloat() {
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
       <button
         onClick={() => setIsVisible(false)}
-        className="absolute -top-1.5 -right-1.5 w-6 h-6 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:text-gray-900 dark:hover:text-white rounded-full flex items-center justify-center shadow-sm transition-colors z-10"
+        className="absolute -top-1.5 -right-1.5 w-6 h-6 bg-white dark:bg-night-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-night-700 hover:text-gray-900 dark:hover:text-white rounded-full flex items-center justify-center shadow-sm transition-colors z-10"
         aria-label="Ocultar botón de WhatsApp"
       >
         <X className="w-3.5 h-3.5" aria-hidden="true" />

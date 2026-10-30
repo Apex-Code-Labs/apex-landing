@@ -11,7 +11,7 @@ export default function GraciasPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white dark:from-night-900 dark:to-night-950 flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         {/* Success Icon */}
         <div className="mb-8">
@@ -38,7 +38,7 @@ export default function GraciasPage() {
         </p>
 
         {/* Next Steps */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+        <div className="bg-white dark:bg-night-800 rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-primary dark:text-white mb-6">
             ¿Qué sigue?
           </h2>

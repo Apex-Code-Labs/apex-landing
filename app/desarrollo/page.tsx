@@ -59,15 +59,12 @@ export default function Desarrollo() {
   return (
     <main className="min-h-screen">
       <Header />
-      <section className="pt-28 md:pt-40 pb-16 md:pb-20 bg-primary-50 dark:bg-gray-900">
-        <div className="container-custom">
-          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-gray-600 dark:text-gray-400 mb-4">
-            Apex Code Labs · Desarrollo para empresas
-          </p>
-          <h1 className="max-w-4xl text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+      <section className="pt-28 md:pt-40 pb-16 md:pb-20 bg-primary-50 dark:bg-night-900">
+        <div className="container-custom text-center">
+          <h1 className="max-w-5xl mx-auto text-[2.25rem] leading-[1.15] sm:text-5xl lg:text-6xl lg:leading-[1.12] font-extrabold">
             Construimos el sistema que tu empresa va a vender o a usar, con la tecnología que elijas.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+          <p className="mt-6 max-w-3xl mx-auto text-pretty text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
             Apps móviles, plataformas con pagos, sistemas para operar un negocio y productos que se venden a otras empresas. Nuestro propio ERP es la prueba de que lo sabemos sostener en producción.
           </p>
           <div className="mt-10">
@@ -76,14 +73,14 @@ export default function Desarrollo() {
         </div>
       </section>
 
-      <section className="section-padding bg-white dark:bg-gray-950">
+      <section className="section-padding bg-white dark:bg-night-950">
         <div className="container-custom">
           <div className="section-head">
             <h2>Lo que construimos</h2>
           </div>
-          <ul className="grid sm:grid-cols-2 gap-x-10 border-t border-gray-200 dark:border-gray-800">
+          <ul className="grid sm:grid-cols-2 gap-x-10 border-t border-gray-200 dark:border-night-800">
             {BUILDS.map((text) => (
-              <li key={text} className="py-6 border-b border-gray-200 dark:border-gray-800 font-semibold">
+              <li key={text} className="py-6 border-b border-gray-200 dark:border-night-800 font-semibold">
                 {text}
               </li>
             ))}
@@ -92,7 +89,7 @@ export default function Desarrollo() {
       </section>
 
       {CASES.length > 0 && (
-        <section className="section-padding bg-primary-50 dark:bg-gray-900">
+        <section className="section-padding bg-primary-50 dark:bg-night-900">
           <div className="container-custom">
             <div className="section-head">
               <h2>Lo que ya construimos</h2>
@@ -110,14 +107,14 @@ export default function Desarrollo() {
         </section>
       )}
 
-      <section className="section-padding bg-white dark:bg-gray-950">
+      <section className="section-padding bg-white dark:bg-night-950">
         <div className="container-custom">
           <div className="section-head">
             <h2>Cómo trabajamos</h2>
           </div>
           <ol className="grid md:grid-cols-3 gap-x-8">
             {STEPS.map((text, i) => (
-              <li key={text} className="relative pt-6 pb-8 border-t-2 border-gray-200 dark:border-gray-800">
+              <li key={text} className="relative pt-6 pb-8 border-t-2 border-gray-200 dark:border-night-800">
                 <span className="absolute -top-0.5 left-0 w-12 h-0.5 bg-accent-600" aria-hidden="true" />
                 <span className="block text-sm font-bold text-accent-700 dark:text-accent-300 tabular-nums mb-3">
                   Paso {i + 1}
