@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Logo from './Logo'
 import { CONTACT_EMAIL, waLink } from '@/lib/contact'
 
@@ -32,11 +33,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Producto</h3>
             <ul className="space-y-2">
-              <li><a href="/#facturacion" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Factura</a></li>
-              <li><a href="/#modulos" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex ERP</a></li>
-              <li><a href="/restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Restaurante</a></li>
-              <li><a href="/desarrollo" className="text-gray-300 hover:text-mint font-medium transition-colors">Desarrollo a la medida</a></li>
-              <li><a href="/#precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</a></li>
+              <li><Link href="/#facturacion" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Factura</Link></li>
+              <li><Link href="/#modulos" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex ERP</Link></li>
+              <li><Link href="/restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Restaurante</Link></li>
+              <li><Link href="/desarrollo" className="text-gray-300 hover:text-mint font-medium transition-colors">Desarrollo a la medida</Link></li>
+              <li><Link href="/#precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</Link></li>
             </ul>
           </div>
 
