@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 import { PRICING_GROUPS, VERTICALES, ADDONS_NOTE, CUSTOM_PLAN_FROM } from '@/lib/pricing'
-import { getSignupHref, getSignupLabel } from '@/lib/cta'
+import { waLink } from '@/lib/contact'
+import GrowthExample from './GrowthExample'
 
 export default function Pricing() {
-  const [groupId, setGroupId] = useState('erp')
+  const [groupId, setGroupId] = useState('factura')
   const [annual, setAnnual] = useState(false)
   const group = PRICING_GROUPS.find((g) => g.id === groupId)!
 
@@ -85,10 +86,12 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href={getSignupHref()}
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`text-center ${plan.recommended ? 'btn-accent' : 'btn-outline'}`}
               >
-                {getSignupLabel()}
+                Escríbenos por WhatsApp
               </a>
             </div>
           ))}
@@ -107,20 +110,29 @@ export default function Pricing() {
           </a>
         </p>
 
+        <GrowthExample />
+
         <div className="mt-20 md:mt-24">
           <div className="section-head">
             <h2>Verticales para tu tipo de negocio</h2>
             <p>
-              Un paquete que se suma a tu plan con lo que tu rubro necesita. Su precio
-              depende de los módulos que elijas: te lo cotizamos.
+              Un paquete con lo que tu rubro necesita. Es un adicional mensual: el
+              precio «desde» se suma a la mensualidad de tu plan.
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 border-t border-gray-200 dark:border-gray-800">
-            {VERTICALES.map(({ icon: Icon, name, scope, text }) => (
+            {VERTICALES.map(({ icon: Icon, name, scope, text, price, href }) => (
               <li key={name} className="flex gap-4 py-6 border-b border-gray-200 dark:border-gray-800">
                 <Icon className="w-5 h-5 mt-1 flex-shrink-0 text-accent-700 dark:text-accent-300" aria-hidden="true" />
                 <div>
-                  <h3 className="font-bold">{name}</h3>
+                  <h3 className="font-bold">
+                    {href ? (
+                      <a href={href} className="hover:text-primary dark:hover:text-accent-300 underline underline-offset-4">{name}</a>
+                    ) : name}
+                  </h3>
+                  <p className="text-sm font-bold text-primary dark:text-white mt-1">
+                    desde {price} <span className="font-normal text-gray-500 dark:text-gray-400">sobre tu plan</span>
+                  </p>
                   <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">{scope}</p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{text}</p>
                 </div>

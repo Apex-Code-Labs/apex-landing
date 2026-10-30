@@ -1,11 +1,10 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import ProblemSolution from '@/components/ProblemSolution'
-import Modules from '@/components/Modules'
 import DteSection from '@/components/DteSection'
-import RestaurantFlow from '@/components/RestaurantFlow'
+import Modules from '@/components/Modules'
 import Pricing from '@/components/Pricing'
-import Comparison from '@/components/Comparison'
+import DevTeaser from '@/components/DevTeaser'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -17,11 +16,10 @@ export default function Home() {
       <Header />
       <Hero />
       <ProblemSolution />
-      <Modules />
       <DteSection />
-      <RestaurantFlow />
+      <Modules />
       <Pricing />
-      <Comparison />
+      <DevTeaser />
       <FAQ />
       <ContactForm />
       <Footer />

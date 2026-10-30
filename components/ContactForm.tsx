@@ -124,7 +124,7 @@ export default function ContactForm() {
               Agenda tu demo gratuita de 30 minutos
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              Te mostramos el sistema en vivo y resolvemos todas tus dudas. Sin instalación y sin compromiso.
+              Te mostramos el sistema en vivo y resolvemos todas tus dudas, sin compromiso.
             </p>
             <p className="text-gray-600 dark:text-gray-300">
               ¿Prefieres escribirnos ahora?{' '}

@@ -24,8 +24,8 @@ export default function DteSection() {
         <div className="section-head">
           <h2 className="!text-white">Cumple con Hacienda sin complicaciones</h2>
           <p className="!text-gray-300">
-            Integración completa con el Ministerio de Hacienda de El Salvador:
-            todos los requerimientos técnicos y legales vigentes para transmitir DTEs.
+            Apex Factura cumple todos los requerimientos técnicos y legales vigentes
+            del Ministerio de Hacienda de El Salvador para transmitir tus DTEs.
           </p>
         </div>
 

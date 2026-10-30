@@ -25,10 +25,11 @@ export default function Modules() {
     <section id="modulos" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-head">
-          <h2>Todo lo que necesitas, en un solo lugar</h2>
+          <h2>Apex ERP: el paso siguiente cuando tu negocio crece</h2>
           <p>
-            Módulos especializados que trabajan de forma integrada. Contrata solo lo
-            que necesitas o el paquete completo.
+            Empiezas facturando y, cuando tu negocio crece, sumas inventario, caja y
+            comandas sin cambiar de sistema. Contrata solo lo que necesitas o el
+            paquete completo.
           </p>
         </div>
 
