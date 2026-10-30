@@ -11,9 +11,8 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="mb-5"><Logo variant="dark" /></div>
             <p className="text-gray-300 leading-relaxed max-w-md">
-              Apex ERP: la plataforma salvadoreña que integra POS, inventario,
-              comandas y facturación electrónica DTE con transmisión directa al
-              Ministerio de Hacienda.
+              Apex Code Labs: facturación electrónica, Apex ERP y desarrollo a la
+              medida para empresas en El Salvador.
             </p>
             <div className="mt-6">
               <a
@@ -33,10 +32,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Producto</h3>
             <ul className="space-y-2">
-              <li><a href="#modulos" className="text-gray-300 hover:text-mint font-medium transition-colors">Módulos</a></li>
-              <li><a href="#facturacion" className="text-gray-300 hover:text-mint font-medium transition-colors">Facturación DTE</a></li>
-              <li><a href="#restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Restaurantes y cafés</a></li>
-              <li><a href="#precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</a></li>
+              <li><a href="/#facturacion" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Factura</a></li>
+              <li><a href="/#modulos" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex ERP</a></li>
+              <li><a href="/restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Restaurante</a></li>
+              <li><a href="/desarrollo" className="text-gray-300 hover:text-mint font-medium transition-colors">Desarrollo a la medida</a></li>
+              <li><a href="/#precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</a></li>
             </ul>
           </div>
 

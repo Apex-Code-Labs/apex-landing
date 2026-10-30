@@ -27,3 +27,12 @@ test('ningún archivo fuente rompe las reglas', () => {
     assert.deepEqual(findViolations(stripComments(readFileSync(f, 'utf8'))), [], f)
   }
 })
+
+test('enlaces del shell son absolutos', () => {
+  const header = readFileSync('components/Header.tsx', 'utf8')
+  for (const f of ['components/Header.tsx', 'components/Footer.tsx']) {
+    const src = readFileSync(f, 'utf8')
+    assert.ok(!src.includes('href="#') && !src.includes("href: '#"), f)
+  }
+  assert.ok(header.includes("'/restaurantes'") && header.includes("'/desarrollo'"))
+})

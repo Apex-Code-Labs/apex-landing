@@ -3,14 +3,15 @@
 import { useState } from 'react'
 import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
-import { getSignupHref, getSignupLabel } from '@/lib/cta'
+import { waLink } from '@/lib/contact'
 
+// Rutas absolutas: el Header también se monta en /restaurantes y /desarrollo.
 const NAV = [
-  { href: '#modulos', label: 'Módulos' },
-  { href: '#facturacion', label: 'Facturación DTE' },
-  { href: '#restaurantes', label: 'Restaurantes' },
-  { href: '#precios', label: 'Precios' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#facturacion', label: 'Factura' },
+  { href: '/#modulos', label: 'ERP' },
+  { href: '/restaurantes', label: 'Restaurantes' },
+  { href: '/desarrollo', label: 'Desarrollo' },
+  { href: '/#precios', label: 'Precios' },
 ]
 
 export default function Header() {
@@ -20,7 +21,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#" aria-label="Apex Code Labs — inicio">
+          <a href="/" aria-label="Apex Code Labs — inicio">
             <Logo />
           </a>
 
@@ -35,8 +36,8 @@ export default function Header() {
               </a>
             ))}
             <ThemeToggle />
-            <a href={getSignupHref()} className="btn-primary !py-2.5">
-              {getSignupLabel()}
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5">
+              Escríbenos por WhatsApp
             </a>
           </nav>
 
@@ -69,8 +70,8 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <a href={getSignupHref()} onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
-                {getSignupLabel()}
+              <a href={waLink()} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="btn-primary w-full text-center">
+                Escríbenos por WhatsApp
               </a>
             </div>
           </div>
