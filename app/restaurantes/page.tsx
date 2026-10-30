@@ -8,6 +8,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 import { waLink, WA_MESSAGE_RESTAURANT } from '@/lib/contact'
 import { RESTAURANT_FROM } from '@/lib/pricing'
 import posCobroLight from '@/public/screenshots/pos_cobro_light.webp'
+import mesasLight from '@/public/screenshots/mesas_light.webp'
 
 const TITLE = 'Apex Restaurante — POS para restaurantes con facturación electrónica en El Salvador'
 const DESCRIPTION = `Comandas, mesas, pantalla de cocina (KDS), recetas que descuentan insumos, caja con corte Z y DTE en un solo sistema. Desde ${RESTAURANT_FROM}/mes con IVA incluido.`
@@ -93,6 +94,14 @@ export default function Restaurantes() {
               </li>
             ))}
           </ul>
+          <div className="mt-12 md:mt-16 rounded-2xl border border-gray-200 dark:border-night-800 shadow-xl overflow-hidden lg:mx-12">
+            <Image
+              src={mesasLight}
+              alt="Mapa de mesas de Apex por áreas, con las mesas ocupadas, el tiempo de cada orden y una mesa unida"
+              sizes="(max-width: 1024px) 100vw, 1120px"
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </section>
 

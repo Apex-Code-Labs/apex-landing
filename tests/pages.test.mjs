@@ -9,7 +9,7 @@ test('página /restaurantes', () => {
   assert.ok(p.includes('export const metadata'))
   const seo = (p.match(/title: '[^']*'/)?.[0] ?? '') + (p.match(/keywords: \[[^\]]*\]/)?.[0] ?? '')
   assert.ok(seo.includes('POS') && seo.toLowerCase().includes('restaurante'), seo)
-  for (const t of ['desde {RESTAURANT_FROM}/mes</span>', 'waLink(WA_MESSAGE_RESTAURANT)', '<RestaurantFlow']) assert.ok(p.includes(t), t)
+  for (const t of ['desde {RESTAURANT_FROM}/mes</span>', 'waLink(WA_MESSAGE_RESTAURANT)', '<RestaurantFlow', 'src={mesasLight}']) assert.ok(p.includes(t), t)
   for (const t of ['comandas', 'mesas', 'KDS', 'recetas', 'corte Z']) assert.ok(p.includes(t), t)
 })
 
