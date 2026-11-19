@@ -6,17 +6,21 @@ const read = (f) => readFileSync(f, 'utf8').replace(/\s+/g, ' ')
 
 test('orden de la home', () => {
   const page = read('app/page.tsx')
-  const pos = ['<Hero', '<ProblemSolution', '<DteSection', '<Modules', '<Pricing', '<FAQ', '<ContactForm'].map((t) => page.indexOf(t))
+  const pos = ['<OrbitHero', 'id="facturacion"', '<Modules', '<FAQ', '<ContactForm'].map((t) => page.indexOf(t))
   assert.ok(pos.every((p, i) => p >= 0 && (i === 0 || p > pos[i - 1])), String(pos))
+  // Precios vive en /precios: la home no repite la tabla.
+  assert.ok(!page.includes('<Pricing'))
   assert.ok(!page.includes('Comparison') && !page.includes('RestaurantFlow'))
-  // El camino de Desarrollo vive en las tarjetas de ProblemSolution: el banner sobra.
   assert.ok(!page.includes('DevTeaser'))
   assert.equal(existsSync('components/DevTeaser.tsx'), false)
+  for (const f of ['components/Hero.tsx', 'components/ProblemSolution.tsx', 'components/DteSection.tsx']) assert.equal(existsSync(f), false, f)
 })
 
-test('los tres caminos se eligen bajo el hero', () => {
-  const s = read('components/ProblemSolution.tsx')
-  for (const t of ["href: '#precios'", "href: '/restaurantes'", "href: '/desarrollo'"]) assert.ok(s.includes(t), t)
+test('los tres caminos se eligen en el hero', () => {
+  const s = read('app/page.tsx')
+  const cards = s.slice(s.indexOf('const PATH_CARDS'), s.indexOf('const STEPS'))
+  for (const t of ["href: '/facturacion'", "href: '/erp'", "href: '/desarrollo'"]) assert.ok(cards.includes(t), t)
+  for (const t of ['href="/precios"', 'href="/restaurantes"']) assert.ok(s.includes(t), t)
   assert.ok(!s.includes('AUDIENCES'))
 })
 
@@ -36,15 +40,32 @@ test('Comparison borrado', () => {
 })
 
 test('hero fijado', () => {
-  const hero = read('components/Hero.tsx')
+  const page = read('app/page.tsx')
+  const hero = page.slice(page.indexOf('<OrbitHero'), page.indexOf('/>', page.indexOf('cardsLabel')))
   for (const t of [
-    'Un sistema que funciona desde el primer día, y se adapta a cómo trabaja tu negocio.',
-    'Ver planes desde {ENTRY_PRICE}/mes',
-    'href="#precios"',
+    "title={['Facturas a Hacienda.', 'Vendes en tu POS.', 'Un solo precio al mes.']}",
+    '{ENTRY_PRICE}/mes</strong>, IVA incluido.',
+    "href: '#contacto'",
   ]) assert.ok(hero.includes(t), t)
-  assert.ok(!hero.includes('$5.63'))
-  // El WhatsApp ya está en el header y en la burbuja: el hero no lo repite.
-  for (const t of ['waLink', 'El Salvador', '<dl']) assert.ok(!hero.includes(t), t)
+  assert.ok(!page.includes('$5.63'))
+  // El WhatsApp ya está en el header y en la burbuja: el hero de la home no lo repite.
+  for (const t of ['waLink', 'whatsapp: true', '<dl']) assert.ok(!hero.includes(t), t)
+})
+
+test('rutas sin anclas: cada entrada del menú es una página', () => {
+  for (const f of ['components/Header.tsx', 'components/Footer.tsx']) {
+    const p = read(f)
+    assert.ok(!p.includes("'/#") && !p.includes('"/#'), f)
+    assert.ok(p.includes('/precios'), f)
+  }
+  const precios = read('app/precios/page.tsx')
+  assert.ok(precios.includes('<Pricing />'), 'precios muestra todos los grupos')
+  assert.ok(precios.includes("canonical: '/precios'"))
+  // Cada producto muestra sólo sus planes y verticales.
+  assert.ok(read('app/facturacion/page.tsx').includes('<Pricing only="factura" />'))
+  assert.ok(read('app/erp/page.tsx').includes('<Pricing only="erp" />'))
+  const p = read('components/Pricing.tsx')
+  assert.ok(p.includes('VERTICALES.filter((v) => !only || v.group === only)') && p.includes('{!only && <div'))
 })
 
 test('ejemplo de mensualidad', () => {

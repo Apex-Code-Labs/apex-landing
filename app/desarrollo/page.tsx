@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { MessageCircle } from 'lucide-react'
 import Header from '@/components/Header'
+import OrbitHero, { type OrbitCard } from '@/components/OrbitHero'
+import dashboardLight from '@/public/screenshots/dashboard_light.webp'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
 import { waLink, WA_MESSAGE_DEV } from '@/lib/contact'
@@ -44,6 +46,12 @@ const STEPS = [
   'Entregamos por etapas y se usa lo construido antes de seguir.',
 ]
 
+const HERO_CARDS: OrbitCard[] = [
+  { kind: 'Móvil', name: 'Apps móviles', detail: 'Para iOS y Android.' },
+  { kind: 'Pagos', name: 'Plataformas con cobro', detail: 'El cliente compra y paga desde su teléfono.' },
+  { kind: 'SaaS', name: 'Productos para otras empresas', detail: 'Cada empresa con sus datos separados.' },
+]
+
 // ponytail: sin casos publicables todavía; se llena cuando haya partners que se puedan mostrar
 const CASES: { name: string; logo: string; summary: string }[] = []
 
@@ -65,19 +73,16 @@ export default function Desarrollo() {
   return (
     <main className="min-h-screen">
       <Header />
-      <section className="pt-28 md:pt-40 pb-16 md:pb-20 bg-primary-50 dark:bg-night-900">
-        <div className="container-custom text-center">
-          <h1 className="max-w-5xl mx-auto text-[2.25rem] leading-[1.15] sm:text-5xl lg:text-6xl lg:leading-[1.12] font-extrabold">
-            Construimos el sistema que tu empresa va a vender o a usar, con la tecnología que elijas.
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-pretty text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-            Apps móviles, plataformas con pagos, sistemas para operar un negocio y productos que se venden a otras empresas. Nuestro propio ERP es la prueba de que lo sabemos sostener en producción.
-          </p>
-          <div className="mt-10">
-            <DevCta />
-          </div>
-        </div>
-      </section>
+      <OrbitHero
+        title={['Tú traes la operación.', 'Nosotros, el sistema.', 'Entregado por etapas.']}
+        lede="Apps móviles, plataformas con pagos, sistemas para operar un negocio y productos que se venden a otras empresas. Nuestro propio ERP es la prueba de que lo sabemos sostener en producción."
+        cta={{ href: waLink(WA_MESSAGE_DEV), label: 'Cuéntanos tu proyecto', whatsapp: true }}
+        trust={['Propuesta escrita con alcance y precio', 'Entregas por etapas', 'Con la tecnología que elijas']}
+        image={dashboardLight}
+        imageAlt="Dashboard de Apex ERP, el sistema que construimos y operamos en producción"
+        cards={HERO_CARDS}
+        cardsLabel="Lo que construimos"
+      />
 
       <section className="section-padding bg-white dark:bg-night-950">
         <div className="container-custom">

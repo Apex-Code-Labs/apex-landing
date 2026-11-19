@@ -9,7 +9,7 @@ test('página /restaurantes', () => {
   assert.ok(p.includes('export const metadata'))
   const seo = (p.match(/title: '[^']*'/)?.[0] ?? '') + (p.match(/keywords: \[[^\]]*\]/)?.[0] ?? '')
   assert.ok(seo.includes('POS') && seo.toLowerCase().includes('restaurante'), seo)
-  for (const t of ['desde {RESTAURANT_FROM}/mes</span>', 'waLink(WA_MESSAGE_RESTAURANT)', '<RestaurantFlow', 'src={mesasLight}']) assert.ok(p.includes(t), t)
+  for (const t of ['{RESTAURANT_FROM}/mes</strong>', 'waLink(WA_MESSAGE_RESTAURANT)', '<RestaurantFlow', 'src={mesasLight}']) assert.ok(p.includes(t), t)
   for (const t of ['comandas', 'mesas', 'KDS', 'recetas', 'corte Z']) assert.ok(p.includes(t), t)
 })
 
@@ -18,7 +18,7 @@ test('página /desarrollo', () => {
   const low = p.toLowerCase()
   assert.ok(p.includes('export const metadata'))
   for (const t of [
-    'Construimos el sistema que tu empresa va a vender o a usar, con la tecnología que elijas.',
+    "title={['Tú traes la operación.', 'Nosotros, el sistema.', 'Entregado por etapas.']}", 'Con la tecnología que elijas',
     'Cuéntanos tu proyecto', 'WA_MESSAGE_DEV', 'Lo que construimos', 'Cómo trabajamos',
     'const CASES', 'CASES.length > 0 &&',
   ]) assert.ok(p.includes(t), t)
@@ -38,14 +38,14 @@ test('SEO de la home', () => {
 })
 
 test('ningún hero lleva label arriba del título', () => {
-  for (const f of ['components/Hero.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx']) {
+  for (const f of ['components/OrbitHero.tsx', 'app/page.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx']) {
     assert.ok(!read(f).includes('uppercase tracking-[0.08em]'), f)
   }
 })
 
-test('twitter propio en /restaurantes y /desarrollo', () => {
+test('twitter propio en cada página', () => {
   // Sin esto, X hereda el título y la descripción de la home.
-  for (const f of ['app/restaurantes/page.tsx', 'app/desarrollo/page.tsx']) {
+  for (const f of ['app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx']) {
     const p = read(f)
     for (const t of ["card: 'summary_large_image'", 'title: TITLE', 'description: DESCRIPTION', "images: ['/og.png']"]) {
       assert.ok(p.includes(`twitter: {`) && p.slice(p.indexOf('twitter: {')).includes(t), `${f}: ${t}`)

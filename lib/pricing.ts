@@ -26,6 +26,7 @@ export interface Vertical {
   text: string
   price: string
   href?: string
+  group: 'factura' | 'erp'
 }
 
 export const PRICING_GROUPS: PlanGroup[] = [
@@ -66,12 +67,12 @@ export const PRICING_GROUPS: PlanGroup[] = [
 ]
 
 export const VERTICALES: Vertical[] = [
-  { icon: UtensilsCrossed, name: 'Restaurante', scope: 'Sobre cualquier plan ERP', text: 'Comandas con mesas, áreas y cocina. Recetas que descuentan insumos.', price: '+$5.63/mes', href: '/restaurantes' },
-  { icon: Pill, name: 'Farmacia', scope: 'Sobre cualquier plan ERP', text: 'Lotes con fecha de vencimiento y alertas, venta por caja, blíster o unidad, y compras cargadas desde el DTE de la droguería.', price: '+$5.63/mes' },
-  { icon: BedDouble, name: 'Turismo', scope: 'Sobre cualquier plan ERP', text: 'Habitaciones y Day Pass desde el POS, con la contribución de turismo separada en el DTE.', price: '+$5.63/mes' },
-  { icon: Dumbbell, name: 'Gimnasio', scope: 'Sobre cualquier plan ERP', text: 'Membresías con vencimiento, recordatorios de renovación y control corporal de cada cliente.', price: '+$5.63/mes' },
-  { icon: HardHat, name: 'Proyectos y talleres', scope: 'Sobre Operación o Empresa', text: 'Órdenes de trabajo con el material cargado a cada una, seguimiento por enlace para tu cliente y control de herramientas.', price: '+$56.48/mes' },
-  { icon: Briefcase, name: 'Servicios', scope: 'Sobre cualquier plan Factura', text: 'Cotizaciones que se convierten en factura.', price: '+$4.50/mes' },
+  { icon: UtensilsCrossed, name: 'Restaurante', scope: 'Sobre cualquier plan ERP', text: 'Comandas con mesas, áreas y cocina. Recetas que descuentan insumos.', price: '+$5.63/mes', href: '/restaurantes', group: 'erp' },
+  { icon: Pill, name: 'Farmacia', scope: 'Sobre cualquier plan ERP', text: 'Lotes con fecha de vencimiento y alertas, venta por caja, blíster o unidad, y compras cargadas desde el DTE de la droguería.', price: '+$5.63/mes', group: 'erp' },
+  { icon: BedDouble, name: 'Turismo', scope: 'Sobre cualquier plan ERP', text: 'Habitaciones y Day Pass desde el POS, con la contribución de turismo separada en el DTE.', price: '+$5.63/mes', group: 'erp' },
+  { icon: Dumbbell, name: 'Gimnasio', scope: 'Sobre cualquier plan ERP', text: 'Membresías con vencimiento, recordatorios de renovación y control corporal de cada cliente.', price: '+$5.63/mes', group: 'erp' },
+  { icon: HardHat, name: 'Proyectos y talleres', scope: 'Sobre Operación o Empresa', text: 'Órdenes de trabajo con el material cargado a cada una, seguimiento por enlace para tu cliente y control de herramientas.', price: '+$56.48/mes', group: 'erp' },
+  { icon: Briefcase, name: 'Servicios', scope: 'Sobre cualquier plan Factura', text: 'Cotizaciones que se convierten en factura.', price: '+$4.50/mes', group: 'factura' },
 ]
 
 export const ENTRY_PRICE = PRICING_GROUPS[0].plans[0].monthly

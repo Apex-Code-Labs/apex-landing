@@ -366,5 +366,9 @@ primera en Teal Deer sólido y el resto en blanco al 10%. Expresa el principio
 - **Don't** centrar el hero con una píldora arriba y tres íconos abajo.
 - **Don't** poner bordes laterales de color de más de 1px en callouts o tarjetas.
 - **Don't** animar con `ping` ni con pulsos de atención. La única transición es la
-  de estado (200ms).
+  de estado (200ms). **Excepción única** (decisión de Kevin, 2026-11-19): el hero de
+  las páginas de producto (home, facturacion, erp, restaurantes, desarrollo y precios; componente `OrbitHero`)
+  puede tener ondas lentas en los anillos (`animate-ripple`, 6s) y tarjetas que
+  flotan (`animate-float`, 7s), siempre con `motion-safe:`. No se replica en
+  ninguna otra sección.
 - **Don't** usar Turquoise Topaz ni Teal Deer como texto sobre blanco.
