@@ -56,6 +56,15 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
       },
+      // Excepción del hero (DESIGN.md, Don'ts): ondas lentas y tarjetas que flotan. Sólo con motion-safe.
+      keyframes: {
+        ripple: { '0%': { transform: 'scale(0.55)', opacity: '0.6' }, '100%': { transform: 'scale(1.25)', opacity: '0' } },
+        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
+      },
+      animation: {
+        ripple: 'ripple 6s ease-out infinite',
+        float: 'float 7s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

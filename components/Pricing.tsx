@@ -6,8 +6,9 @@ import { PRICING_GROUPS, VERTICALES, ADDONS_NOTE } from '@/lib/pricing'
 import { waLink } from '@/lib/contact'
 import GrowthExample from './GrowthExample'
 
-export default function Pricing() {
-  const [groupId, setGroupId] = useState('factura')
+// `only` fija el grupo en las páginas de producto: sin selector y sólo con sus verticales.
+export default function Pricing({ only }: { only?: 'factura' | 'erp' }) {
+  const [groupId, setGroupId] = useState<string>(only ?? 'factura')
   const [annual, setAnnual] = useState(false)
   const group = PRICING_GROUPS.find((g) => g.id === groupId)!
 
@@ -17,13 +18,12 @@ export default function Pricing() {
         <div className="section-head">
           <h2>Elige el plan para tu negocio</h2>
           <p>
-            Apex Factura si solo necesitas cumplir con Hacienda; Apex ERP si quieres
-            operar el negocio completo. Precios con IVA (13%) incluido, sin
-            permanencia forzada.
+            {!only && 'Apex Factura si solo necesitas cumplir con Hacienda; Apex ERP si quieres operar el negocio completo. '}
+            Precios con IVA (13%) incluido, sin permanencia forzada.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
+        {!only && <div className="flex flex-wrap justify-center gap-2 mb-6">
           {PRICING_GROUPS.map((g) => (
             <button
               key={g.id}
@@ -38,7 +38,7 @@ export default function Pricing() {
               {g.label}
             </button>
           ))}
-        </div>
+        </div>}
 
         <p className="text-center text-gray-600 dark:text-gray-400 mb-8">{group.tagline}</p>
 
@@ -121,7 +121,7 @@ export default function Pricing() {
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 border-t border-gray-200 dark:border-night-800">
-            {VERTICALES.map(({ icon: Icon, name, scope, text, price, href }) => (
+            {VERTICALES.filter((v) => !only || v.group === only).map(({ icon: Icon, name, scope, text, price, href }) => (
               <li key={name} className="flex gap-4 py-6 border-b border-gray-200 dark:border-night-800">
                 <Icon className="w-5 h-5 mt-1 flex-shrink-0 text-accent-700 dark:text-accent-300" aria-hidden="true" />
                 <div>

@@ -7,14 +7,17 @@ import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
 import { waLink, waMessageFor } from '@/lib/contact'
 
-// Rutas absolutas: el Header también se monta en /restaurantes y /desarrollo.
+// Cada entrada del menú es una página: sin anclas de la home (/#...).
 const NAV = [
-  { href: '/#facturacion', label: 'Factura' },
-  { href: '/#modulos', label: 'ERP' },
-  { href: '/restaurantes', label: 'Restaurante' },
+  { href: '/facturacion', label: 'Factura' },
+  { href: '/erp', label: 'ERP' },
+  { href: '/restaurantes', label: 'Restaurantes' },
   { href: '/desarrollo', label: 'Desarrollo' },
-  { href: '/#precios', label: 'Precios' },
+  { href: '/precios', label: 'Precios' },
 ]
+
+// Página actual: mismo color que el hover.
+const current = (pathname: string, href: string) => (pathname === href ? 'page' : undefined)
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -33,7 +36,8 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent transition-colors font-medium"
+                aria-current={current(pathname, item.href)}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-accent aria-[current=page]:text-primary dark:aria-[current=page]:text-accent transition-colors font-medium"
               >
                 {item.label}
               </Link>
@@ -68,7 +72,8 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-left text-gray-700 dark:text-gray-300 hover:text-primary transition-colors font-medium"
+                  aria-current={current(pathname, item.href)}
+                  className="text-left text-gray-700 dark:text-gray-300 hover:text-primary aria-[current=page]:text-primary dark:aria-[current=page]:text-accent transition-colors font-medium"
                 >
                   {item.label}
                 </Link>

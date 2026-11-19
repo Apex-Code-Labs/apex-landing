@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { MessageCircle } from 'lucide-react'
 import Header from '@/components/Header'
+import OrbitHero, { type OrbitCard } from '@/components/OrbitHero'
 import RestaurantFlow from '@/components/RestaurantFlow'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
@@ -46,61 +47,50 @@ const MODULES = [
   { name: 'DTE', text: 'Cada cobro genera su documento y se transmite a Hacienda.' },
 ]
 
+const HERO_CARDS: OrbitCard[] = [
+  { kind: 'Salón', name: 'Comandas y mesas', detail: 'El mesero toma la orden desde la tablet o el teléfono.', href: '#incluye' },
+  { kind: 'Caja', name: 'Corte X y corte Z', detail: 'Cada cobro genera su DTE y se transmite a Hacienda.', href: '#incluye' },
+  { kind: 'Cocina', name: 'Pantalla de cocina (KDS)', detail: 'La cocina recibe cada orden al instante.', href: '#incluye' },
+]
+
 export default function Restaurantes() {
   return (
     <main className="min-h-screen">
       <Header />
-      <section className="pt-28 md:pt-40 bg-primary-50 dark:bg-night-900 overflow-hidden">
-        <div className="container-custom text-center">
-          <h1 className="max-w-5xl mx-auto text-[2.25rem] leading-[1.15] sm:text-5xl lg:text-6xl lg:leading-[1.12] font-extrabold">
-            Tu restaurante, de la mesa a Hacienda, en un solo sistema.
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-pretty text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-            Es Apex ERP con el paquete Restaurante: comandas, mesas, cocina, recetas, caja y facturación electrónica trabajando juntas.
-          </p>
-          <a
-            href={waLink(WA_MESSAGE_RESTAURANT)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary mt-10 inline-flex items-center gap-2"
-          >
-            <MessageCircle className="w-4 h-4" aria-hidden="true" />
-            <span>Escríbenos<span className="hidden sm:inline"> por WhatsApp</span> · <span className="whitespace-nowrap">desde {RESTAURANT_FROM}/mes</span></span>
-          </a>
-          <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">IVA incluido, sin permanencia</p>
+      <OrbitHero
+        title={['De la mesa a la cocina.', 'De la caja a Hacienda.', 'Un solo sistema.']}
+        lede="Es Apex ERP con el paquete Restaurante: comandas, mesas, cocina, recetas, caja y facturación electrónica trabajando juntas."
+        cta={{ href: waLink(WA_MESSAGE_RESTAURANT), label: 'Escríbenos por WhatsApp', whatsapp: true }}
+        note={<>Desde <strong className="text-white tabular-nums">{RESTAURANT_FROM}/mes</strong>, IVA incluido.</>}
+        trust={['Sin permanencia', 'Un DTE por cada cobro', 'Corte X y corte Z']}
+        image={posCobroLight}
+        imageAlt="Punto de venta de Apex con un pedido de bebidas listo para cobrar, IVA incluido"
+        cards={HERO_CARDS}
+        cardsLabel="Lo que incluye"
+      />
 
-          <div className="mt-14 md:mt-16 -mb-px rounded-t-2xl border border-b-0 border-primary-200 dark:border-night-700 shadow-[0_-12px_48px_-12px_rgba(18,28,140,0.18)] dark:shadow-none overflow-hidden lg:mx-12">
-            <Image
-              src={posCobroLight}
-              alt="Punto de venta de Apex con un pedido de bebidas listo para cobrar, IVA incluido"
-              sizes="(max-width: 1024px) 100vw, 1180px"
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white dark:bg-night-950">
+      <section id="incluye" className="section-padding bg-white dark:bg-night-950">
         <div className="container-custom">
           <div className="section-head">
             <h2>Lo que incluye</h2>
           </div>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 border-t border-gray-200 dark:border-night-800">
-            {MODULES.map(({ name, text }) => (
-              <li key={name} className="py-6 border-b border-gray-200 dark:border-night-800">
-                <h3 className="font-bold mb-1">{name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{text}</p>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-12 md:mt-16 rounded-2xl border border-gray-200 dark:border-night-800 shadow-xl overflow-hidden lg:mx-12">
-            <Image
-              src={mesasLight}
-              alt="Mapa de mesas de Apex por áreas, con las mesas ocupadas, el tiempo de cada orden y una mesa unida"
-              sizes="(max-width: 1024px) 100vw, 1120px"
-              className="w-full h-auto"
-            />
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+            <ul className="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-x-8 border-t border-gray-200 dark:border-night-800">
+              {MODULES.map(({ name, text }) => (
+                <li key={name} className="py-5 border-b border-gray-200 dark:border-night-800">
+                  <h3 className="font-bold mb-1">{name}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{text}</p>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-12 lg:mt-0 lg:col-span-7 rounded-2xl border border-gray-200 dark:border-night-800 shadow-xl overflow-hidden">
+              <Image
+                src={mesasLight}
+                alt="Mapa de mesas de Apex por áreas, con las mesas ocupadas, el tiempo de cada orden y una mesa unida"
+                sizes="(max-width: 1024px) 100vw, 700px"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
