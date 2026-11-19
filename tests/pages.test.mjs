@@ -60,3 +60,15 @@ test('header y burbuja mandan el mensaje de la página', () => {
     assert.ok(!p.includes('waLink()'), f)
   }
 })
+
+test('el sitemap lista cada página pública y robots lo anuncia', async () => {
+  const { readdirSync, existsSync } = await import('node:fs')
+  const sitemap = read('app/sitemap.ts')
+  const pages = readdirSync('app', { withFileTypes: true })
+    .filter((d) => d.isDirectory() && existsSync(`app/${d.name}/page.tsx`) && d.name !== 'gracias')
+    .map((d) => `'/${d.name}'`)
+  assert.ok(pages.length >= 6, `sólo encontré ${pages.length} páginas`)
+  for (const p of pages) assert.ok(sitemap.includes(p), `${p} falta en app/sitemap.ts`)
+  assert.ok(!sitemap.includes("'/gracias'"))
+  assert.ok(read('app/robots.ts').includes("sitemap: 'https://apexcodelabs.com/sitemap.xml'"))
+})
