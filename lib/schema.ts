@@ -1,5 +1,3 @@
-import { FAQS } from './faqs'
-
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -52,17 +50,5 @@ export function generateSoftwareApplicationSchema() {
       offerCount: 5,
     },
     provider: { '@type': 'Organization', name: 'Apex Code Labs', url: 'https://apexcodelabs.com' },
-  }
-}
-
-export function generateFAQSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQS.map((f) => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
-    })),
   }
 }

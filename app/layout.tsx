@@ -5,7 +5,6 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   generateSoftwareApplicationSchema,
-  generateFAQSchema,
 } from '@/lib/schema'
 import Providers from '@/components/Providers'
 import { ENTRY_PRICE } from '@/lib/pricing'
@@ -56,7 +55,6 @@ export default function RootLayout({
   const organizationSchema = generateOrganizationSchema()
   const websiteSchema = generateWebSiteSchema()
   const softwareApplicationSchema = generateSoftwareApplicationSchema()
-  const faqSchema = generateFAQSchema()
 
   return (
     <html lang="es-SV" className={`scroll-smooth ${poppins.variable}`} suppressHydrationWarning>
@@ -85,12 +83,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(softwareApplicationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
           }}
         />
 
