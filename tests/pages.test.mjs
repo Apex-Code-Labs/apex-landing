@@ -37,6 +37,17 @@ test('/facturacion: H1 visible con la búsqueda y la sección de la Normativa 2.
   for (const t of ['id="normativa-2"', '1 de diciembre de 2026', 'href="/guia-facturacion-electronica#normativa-2-0"']) assert.ok(p.includes(t), t)
 })
 
+test('cada búsqueda comercial tiene su página: el término abre el título', () => {
+  const title = (p) => p.match(/const TITLE = '([^']*)'/)?.[1] ?? ''
+  const f = read('app/facturacion/page.tsx')
+  const e = read('app/erp/page.tsx')
+  assert.match(title(f), /^Sistema de facturación electrónica/)
+  assert.match(f, /lede="[^"]*sistema de facturación electrónica/)
+  assert.match(title(e), /^Sistema de punto de venta/)
+  const h1 = e.match(/title=\{\[([^\]]*)\]\}/)?.[1] ?? ''
+  assert.ok(h1.includes('Punto de venta'), h1)
+})
+
 test('guía de facturación electrónica', () => {
   const p = read('app/guia-facturacion-electronica/page.tsx')
   assert.ok(p.includes("canonical: '/guia-facturacion-electronica'"))
