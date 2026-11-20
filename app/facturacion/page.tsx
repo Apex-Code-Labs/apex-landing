@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Check } from 'lucide-react'
 import Header from '@/components/Header'
 import OrbitHero, { type OrbitCard } from '@/components/OrbitHero'
@@ -45,6 +46,12 @@ const INCLUDES = [
   { name: 'Catálogo de productos', text: 'En el plan Profesional, sin inventario.' },
 ]
 
+// Respaldo en erp-2025: NormativaVersion::forDate (corte 2026-12-01) y MhEventVersion (eventos por fecha del evento).
+const NORMATIVA_2 = [
+  { name: 'Cambio por fecha', text: 'Lo que emitas hasta el 30 de noviembre sale en la versión 1.2; desde el 1 de diciembre, en la 2.0, sin que configures nada.' },
+  { name: 'Invalidación y contingencia', text: 'Los eventos de invalidación y de contingencia también pasan a la versión 2.0 el 1 de diciembre.' },
+]
+
 // ponytail: no hay captura del módulo de facturación; la tarjeta de DTE la reemplaza en la órbita
 function DteCard() {
   return (
@@ -68,7 +75,7 @@ export default function Facturacion() {
     <main className="min-h-screen">
       <Header />
       <OrbitHero
-        title={['Factura electrónica.', 'Directo a Hacienda.', `Desde ${ENTRY_PRICE} al mes.`]}
+        title={['Facturación electrónica', 'en El Salvador.', `Desde ${ENTRY_PRICE} al mes.`]}
         lede="Emite todos los tipos de DTE del Ministerio de Hacienda. Activamos tu cuenta y te certificamos ante el MH; tú solo facturas."
         cta={{ href: '#contacto', label: 'Agenda tu demo de 30 minutos' }}
         note="IVA incluido."
@@ -92,6 +99,32 @@ export default function Facturacion() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* Fuente: comunicado del MH del 25-may-2026. El corte por fecha es NormativaVersion::forDate en erp-2025. */}
+      <section id="normativa-2" className="section-padding bg-primary-50 dark:bg-night-900">
+        <div className="container-custom">
+          <div className="section-head">
+            <h2>Listo para la Normativa DTE 2.0</h2>
+            <p>
+              Desde el 1 de diciembre de 2026, el Ministerio de Hacienda exige la versión 2.0 a quienes facturan con un
+              sistema propio o de un proveedor. Con Apex Factura no tienes que hacer nada: el cambio es automático.
+            </p>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-x-12 border-t border-gray-200 dark:border-night-800">
+            {NORMATIVA_2.map(({ name, text }) => (
+              <li key={name} className="py-6 border-b border-gray-200 dark:border-night-800">
+                <h3 className="font-bold mb-1">{name}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{text}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-center">
+            <Link href="/guia-facturacion-electronica#normativa-2-0" className="font-semibold text-primary dark:text-accent-300 underline">
+              Qué cambia con la Normativa 2.0
+            </Link>
+          </p>
         </div>
       </section>
 
