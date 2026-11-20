@@ -35,6 +35,10 @@ test('SEO de la home', () => {
   const orgAndSite = read('lib/schema.ts').split('SoftwareApplication')[0]
   assert.ok(!orgAndSite.includes('comandas'), 'comandas en Organization/WebSite')
   assert.ok(orgAndSite.includes('facturación electrónica'))
+  // Google retiró los rich results de FAQ (may-2026) y el layout lo publicaba
+  // en páginas sin FAQ visible: no se vuelve a emitir FAQPage.
+  for (const f of ['lib/schema.ts', 'app/layout.tsx'])
+    assert.ok(!read(f).includes('FAQPage'), `FAQPage en ${f}`)
 })
 
 test('ningún hero lleva label arriba del título', () => {
