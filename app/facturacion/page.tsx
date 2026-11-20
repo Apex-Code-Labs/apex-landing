@@ -11,7 +11,7 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 import { PRICING_GROUPS, ENTRY_PRICE } from '@/lib/pricing'
 import { DTE_TYPES, TRUST } from '@/lib/dte'
 
-const TITLE = 'Apex Factura — Facturación electrónica (DTE) en El Salvador'
+const TITLE = 'Sistema de facturación electrónica (DTE) en El Salvador — Apex Factura'
 const DESCRIPTION = `Emite todos los tipos de DTE del Ministerio de Hacienda, con transmisión, anulación y contingencia. Te certificamos ante el MH. Desde ${ENTRY_PRICE}/mes con IVA incluido.`
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export default function Facturacion() {
       <Header />
       <OrbitHero
         title={['Facturación electrónica', 'en El Salvador.', `Desde ${ENTRY_PRICE} al mes.`]}
-        lede="Emite todos los tipos de DTE del Ministerio de Hacienda. Activamos tu cuenta y te certificamos ante el MH; tú solo facturas."
+        lede="Un sistema de facturación electrónica con todos los tipos de DTE del Ministerio de Hacienda. Activamos tu cuenta y te certificamos ante el MH; tú solo facturas."
         cta={{ href: '#contacto', label: 'Agenda tu demo de 30 minutos' }}
         note="IVA incluido."
         trust={TRUST}

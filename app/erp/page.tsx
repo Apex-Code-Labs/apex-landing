@@ -14,7 +14,7 @@ import dashboardLight from '@/public/screenshots/dashboard_light.webp'
 const erp = PRICING_GROUPS[1]
 const FROM = erp.plans[0].monthly
 
-const TITLE = 'Apex ERP — POS, inventario, caja y facturación electrónica en El Salvador'
+const TITLE = 'Sistema de punto de venta (POS) e inventario en El Salvador — Apex ERP'
 const DESCRIPTION = `Punto de venta, inventario con kardex, caja y DTE en un solo sistema: cada venta descuenta inventario y se transmite a Hacienda. Desde ${FROM}/mes con IVA incluido.`
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export default function Erp() {
     <main className="min-h-screen">
       <Header />
       <OrbitHero
-        title={['POS, inventario y caja.', 'Factura incluida.', 'Un solo sistema.']}
+        title={['Punto de venta.', 'Inventario y caja.', 'Factura incluida.']}
         lede="Cuando tu cajero cierra una venta, el sistema descuenta el inventario, la registra en caja y transmite el DTE al MH. Nadie vuelve a teclear la venta en otro programa."
         cta={{ href: '#contacto', label: 'Agenda tu demo de 30 minutos' }}
         note={<>Desde <strong className="text-white tabular-nums">{FROM}/mes</strong>, IVA incluido.</>}
