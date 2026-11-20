@@ -1,3 +1,5 @@
+import { SOCIAL } from './contact'
+
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -16,9 +18,7 @@ export function generateOrganizationSchema() {
       "contactType": "customer service",
       "availableLanguage": ["Spanish", "English"]
     },
-    "sameAs": [
-      "https://linkedin.com/company/apex-code-labs"
-    ]
+    "sameAs": Object.values(SOCIAL)
   }
 }
 

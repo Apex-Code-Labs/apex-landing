@@ -41,6 +41,15 @@ test('SEO de la home', () => {
     assert.ok(!read(f).includes('FAQPage'), `FAQPage en ${f}`)
 })
 
+test('cada red oficial sale en el footer y en el sameAs del schema', () => {
+  const block = read('lib/contact.ts').match(/SOCIAL = \{([^}]*)\}/)?.[1] ?? ''
+  const keys = [...block.matchAll(/(\w+): '/g)].map((m) => m[1])
+  assert.ok(keys.includes('instagram') && keys.includes('linkedin'), `SOCIAL: ${keys}`)
+  assert.ok(read('lib/schema.ts').includes('"sameAs": Object.values(SOCIAL)'))
+  const footer = read('components/Footer.tsx')
+  for (const k of keys) assert.ok(footer.includes(`href={SOCIAL.${k}}`), `${k} falta en el footer`)
+})
+
 test('ningún hero lleva label arriba del título', () => {
   for (const f of ['components/OrbitHero.tsx', 'app/page.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx']) {
     assert.ok(!read(f).includes('uppercase tracking-[0.08em]'), f)
