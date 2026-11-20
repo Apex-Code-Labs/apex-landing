@@ -51,6 +51,7 @@ export default function Footer() {
               <li><Link href="/restaurantes" className="text-gray-300 hover:text-mint font-medium transition-colors">Apex Restaurante</Link></li>
               <li><Link href="/desarrollo" className="text-gray-300 hover:text-mint font-medium transition-colors">Desarrollo a la medida</Link></li>
               <li><Link href="/precios" className="text-gray-300 hover:text-mint font-medium transition-colors">Precios</Link></li>
+              <li><Link href="/guia-facturacion-electronica" className="text-gray-300 hover:text-mint font-medium transition-colors">Guía de facturación electrónica</Link></li>
             </ul>
           </div>
 

@@ -29,6 +29,34 @@ test('página /desarrollo', () => {
   ]) assert.ok(low.includes(t), t)
 })
 
+test('/facturacion: H1 visible con la búsqueda y la sección de la Normativa 2.0', () => {
+  const p = read('app/facturacion/page.tsx')
+  // Un solo H1, visible: un H1 oculto para SEO es texto oculto según las políticas de spam de Google.
+  const h1 = p.match(/title=\{\[([^\]]*)\]\}/)?.[1] ?? ''
+  assert.ok(h1.includes('Facturación electrónica') && h1.includes('El Salvador'), h1)
+  for (const t of ['id="normativa-2"', '1 de diciembre de 2026', 'href="/guia-facturacion-electronica#normativa-2-0"']) assert.ok(p.includes(t), t)
+})
+
+test('guía de facturación electrónica', () => {
+  const p = read('app/guia-facturacion-electronica/page.tsx')
+  assert.ok(p.includes("canonical: '/guia-facturacion-electronica'"))
+  assert.ok(!p.includes('FAQPage'), 'FAQPage en la guía')
+  assert.ok(!/sr-only|className="hidden"/.test(p), 'texto oculto en la guía')
+  // Las cuatro preguntas de «Otras preguntas de los usuarios» para «facturacion electronica el salvador».
+  for (const q of [
+    '¿Cuándo será obligatoria la factura electrónica en El Salvador?',
+    '¿Cómo hacer una facturación electrónica en El Salvador?',
+    '¿Es obligatoria la factura electrónica en 2026?',
+    '¿Quién está obligado a facturar electrónicamente en 2026?',
+  ]) assert.ok(p.includes(q), q)
+  assert.ok(p.includes('id="normativa-2-0"'))
+  assert.ok(p.includes('href="/facturacion"'))
+  // Cada dato fiscal cita al MH: ninguna fuente que no sea un dominio oficial.
+  const sources = [...p.matchAll(/href: '(https?:[^']*)'/g)].map((m) => m[1])
+  assert.ok(sources.length >= 2, `fuentes: ${sources}`)
+  for (const s of sources) assert.ok(/^https:\/\/([a-z.]+\.)?(mh\.gob\.sv|factura\.gob\.sv|asamblea\.gob\.sv|jurisprudencia\.gob\.sv|imprentanacional\.gob\.sv)\//.test(s), s)
+})
+
 test('SEO de la home', () => {
   assert.ok(!read('app/layout.tsx').includes('POS restaurante'))
   // Organization y WebSite van antes de SoftwareApplication en lib/schema.ts
@@ -51,14 +79,14 @@ test('cada red oficial sale en el footer y en el sameAs del schema', () => {
 })
 
 test('ningún hero lleva label arriba del título', () => {
-  for (const f of ['components/OrbitHero.tsx', 'app/page.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx']) {
+  for (const f of ['components/OrbitHero.tsx', 'app/page.tsx', 'app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx', 'app/guia-facturacion-electronica/page.tsx']) {
     assert.ok(!read(f).includes('uppercase tracking-[0.08em]'), f)
   }
 })
 
 test('twitter propio en cada página', () => {
   // Sin esto, X hereda el título y la descripción de la home.
-  for (const f of ['app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx']) {
+  for (const f of ['app/restaurantes/page.tsx', 'app/desarrollo/page.tsx', 'app/facturacion/page.tsx', 'app/erp/page.tsx', 'app/precios/page.tsx', 'app/guia-facturacion-electronica/page.tsx']) {
     const p = read(f)
     for (const t of ["card: 'summary_large_image'", 'title: TITLE', 'description: DESCRIPTION', "images: ['/og.png']"]) {
       assert.ok(p.includes(`twitter: {`) && p.slice(p.indexOf('twitter: {')).includes(t), `${f}: ${t}`)
