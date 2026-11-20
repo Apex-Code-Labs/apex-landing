@@ -62,7 +62,7 @@ function Section({ id, title, children }: { id?: string; title: string; children
 }
 
 function Quote({ children }: { children: ReactNode }) {
-  return <blockquote className="border-l-4 border-accent pl-4 italic text-gray-600 dark:text-gray-400">{children}</blockquote>
+  return <blockquote className="border-l-2 border-gray-300 dark:border-night-800 pl-4 italic text-gray-600 dark:text-gray-400">{children}</blockquote>
 }
 
 export default function GuiaFacturacionElectronica() {
